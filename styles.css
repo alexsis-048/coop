@@ -309,3 +309,99 @@ table.bordered thead th {
 table.bordered td[rowspan] {
   background: #f4f8fb; /* легкий фон для ячейки с годом */
 }
+/* ===== Mobile layout for the links block under header ===== */
+@media (max-width: 768px) {
+  /* контент под фикс-хедером без боковых отступов */
+  .page-content{
+    margin-top: 88px;       /* высота хедера */
+    padding: 0;
+  }
+
+  /* сам блок ссылок (это первая таблица внутри .page-content) */
+  .page-content > table[align="right"]{
+    display: block;
+    width: 100% !important;
+    margin: 0 0 12px 0;     /* отступ снизу перед заголовком */
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    overflow: hidden;       /* убираем скролл от глобального правила для таблиц */
+  }
+
+  /* превращаем первую строку (иконки) в горизонтальный ряд */
+  .page-content > table[align="right"] tr:first-child{
+    display: flex;
+    gap: 12px;
+    justify-content: space-around;
+    padding: 12px 10px;
+    border-top: 0;
+  }
+  .page-content > table[align="right"] tr:first-child td{
+    flex: 1 1 0;
+    border-right: 0 !important;
+    padding: 8px 0;
+  }
+
+  /* крупнее иконки */
+  .page-content > table[align="right"] tr:first-child img{
+    width: 48px !important;
+    height: 48px !important;
+    margin: 0 auto;
+    border: none;
+  }
+
+  /* вторая строка — карточка "Личный/Особистий кабинет" на всю ширину */
+  .page-content > table[align="right"] tr:nth-child(2){
+    display: block;
+    padding: 12px 16px 16px;
+    border-top: 1px solid #e6e6e6;
+  }
+  .page-content > table[align="right"] tr:nth-child(2) td{
+    display: block;
+    border: 0 !important;
+    padding: 0;
+  }
+  .page-content > table[align="right"] tr:nth-child(2) img{
+    height: 72px !important;
+    width: auto !important;
+    margin: 6px auto 4px;
+    border: 0;
+  }
+  .page-content > table[align="right"] tr:nth-child(2) div{
+    text-align: center;
+    font-size: 16px !important;
+  }
+
+  /* текстовые блоки после ссылки — привычные внутренние поля */
+  .page-content h1,
+  .page-content h2,
+  .page-content h3,
+  .page-content p,
+  .page-content span{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* общий контейнер страницы на мобилке во всю ширину */
+  body{
+    max-width: 100%;
+    padding: 1em 0 2.5em;
+    font-size: 14px;
+  }
+
+  /* не применять горизонтальный скролл ко всем таблицам подряд,
+     но оставить его для длинных табличных данных */
+  .page-content > table.bordered{
+    overflow-x: auto;
+    display: block;
+  }
+}
+
+/* очень маленькие экраны */
+@media (max-width: 480px){
+  .page-content > table[align="right"] tr:first-child img{
+    width: 44px !important;
+    height: 44px !important;
+  }
+  .page-content h1{ font-size: 22px; }
+}
