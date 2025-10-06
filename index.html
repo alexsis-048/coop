@@ -1,382 +1,637 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-i18n="page_title">Членські внески</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title data-i18n="meta.title">СК "Харчовик-2" — садівничий масив, Одеська область</title>
+  <meta name="description" data-i18n="meta.desc" content="Офіційний сайт СК «Харчовик-2» — інформація для садоводів, особистий кабінет та зручна оплата всіх внесків, новини в Viber і Telegram-каналі, документи та прямі контакти.">
+
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="shortcut icon" href="logo.png" type="image/jpeg">
+  <link rel="image_src" href="logo.png">
+
   <link rel="stylesheet" href="styles.css">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JX7VXNKSYX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JX7VXNKSYX');
+  </script>
 </head>
 <body>
-
+  <!-- Хедер -->
   <header class="site-header">
-    <div class="container header-inner">
+    <div class="header-inner">
       <div class="logo-block">
-        <img src="logo.jpg" alt="Логотип" class="logo">
-        <h1 class="site-title" data-i18n="org_name">Харчовик-2</h1>
+        <img src="logo.png" class="logo" data-i18n-alt="img.logoAlt" alt="Логотип Харчовик-2">
+        <h1 class="site-title">СК "Харчовик-2"</h1>
       </div>
       <div class="lang-switcher">
-        <button onclick="setLanguage('uk')">Укр</button>
-        <button onclick="setLanguage('ru')">Рус</button>
+        <button data-i18n="btn.uk" onclick="setLanguage('uk')">Укр</button>
+        <button data-i18n="btn.ru" onclick="setLanguage('ru')">Рус</button>
       </div>
     </div>
   </header>
 
-  <h1>Садовий кооператив «Харчовик-2»</h1>
-
-  <main class="container main-content">
-
-    <section class="about-and-links">
-      <div class="about">
-        <h2 data-i18n="about_title">Про кооператив</h2>
-        <p data-i18n="about_p1">Це територія площею 13.2 га, яку було виділено для колективного садівництва згідно з рішення виконкома Біляївської районної ради народних депутатів № 502 від 1 грудня 1988 року.</p>
-        <p data-i18n="about_p2">Засновниками СК «Харчовик-2» на даній земельній ділянці були різні садівничі масиви:  АТ «Одесхарчокомбінат», ОКБ, ДОСААФ та інші. Сьогодні загальна чисельність садових ділянок складає 256 одиниць.</p>
-        <p data-i18n="about_p3">Відповідно до виписки з Єдиного державного реєстру юридичних осіб та фізичних осіб-підприємців місце знаходження юридичної особи: Україна, 67631, Одеська область, Біляївський р-н, с.Берегове.</p>
-      </div>
-
-      <aside class="side-links">
-        <div class="side-box">
-          <div class="link-icons">
-            <a href="https://t.me/harchovik2_SK" target="_blank" aria-label="Telegram">
-              <img src="teleg.jpg" alt="Telegram">
+  <main class="page-content">
+    <!-- Правый блок ссылок -->
+    <table style="width:240px;border-collapse:collapse;border:1px solid lightgreen;border-radius:10px;text-align:center;font-family:Arial, sans-serif;" align="right">
+      <tbody>
+        <tr>
+          <td style="width:33%;padding:6px;border-right:1px solid lightgray;">
+            <a href="https://invite.viber.com/?g2=AQAG18ZWcNUFz1VaFSnqgBtIVsrOpIc82oLOqbb2%2B4kkdFgBmf3PEvB9TScVftl0" target="_blank">
+              <img src="viber.png" width="40" height="40" alt="viber" style="border:none;" loading="lazy">
             </a>
-            <a href="https://invite.viber.com/?g2=AQAG18ZWcNUFz1VaFSnqgBtIVsrOpIc82oLOqbb2%2B4kkdFgBmf3PEvB9TScVftl0" target="_blank" aria-label="Viber">
-              <img src="viber.png" alt="Viber">
+          </td>
+          <td style="width:33%;padding:6px;border-right:1px solid lightgray;">
+            <a href="https://t.me/harchovik2_SK" target="_blank">
+              <img src="teleg.jpg" width="40" height="40" alt="Telegram" style="border:none;" loading="lazy">
             </a>
-            <a href="https://drive.google.com/drive/folders/12uCzhIB_3Dujf1lfJTQT1PSJSo6CgfQd?usp=sharing" target="_blank" aria-label="Папка з файлами">
-              <img src="file.jpg" alt="Папка">
+          </td>
+          <td style="width:34%;padding:6px;border-right:1px solid lightgray;">
+            <a href="https://drive.google.com/drive/folders/12uCzhIB_3Dujf1lfJTQT1PSJSo6CgfQd?usp=sharing" target="_blank">
+              <img src="file.jpg" width="40" height="40" data-i18n-alt="img.docsAlt" alt="Офіційні документи" style="border:none;" loading="lazy">
             </a>
-          </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" style="padding:6px;border-top:1px solid lightgray;">
+            <div style="margin-top:4px;font-size:14px;"><i data-i18n="pay.hint">Зручно сплачуйте членські, цільові внески та інші платежі</i></div>
+            <a href="https://miydimonline.com.ua/account/login?ReturnUrl=%2Fkharchovik-2sk%2Fuk" target="_blank">
+              <img src="miy_dim.jpg" alt="Особистий кабінет" style="border:none;width:auto;height:60px;">
+              <div style="margin-top:4px;font-size:16px;" data-i18n="pay.cabinet">Особистий кабінет</div>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-          <div class="miy_dim-block">
-            <a href="https://miydimonline.com.ua/account/login?ReturnUrl=%2Fkharchovik-2sk%2Fuk" class="cabinet-link-wrap" aria-label="Особистий кабінет">
-              <img src="miy_dim.jpg" alt="Мій Дім — логотип" class="miy_dim_logo">
-            </a>
-            <a href="https://miydimonline.com.ua/account/login?ReturnUrl=%2Fkharchovik-2sk%2Fuk" class="cabinet-link" data-i18n="nav_cabinet">Особистий кабінет</a>
-          </div>
-        </div>
-      </aside>
-    </section>
+    <h1 data-i18n="h.main">Садовий кооператив «Харчовик-2»</h1>
+
+    <h2 data-i18n="about.title">Про кооператив</h2>
+    <span data-i18n="about.p1">Це територія площею 13.2 га, яку було виділено для колективного садівництва згідно з рішення виконкома Біляївської районної ради народних депутатів № 502 від 1 грудня 1988 року.</span><br>
+    <span data-i18n="about.p2">Засновниками СК «Харчовик-2» на даній земельній ділянці були різні садівничі масиви:  АТ «Одесхарчокомбінат», ОКБ, ДОСААФ та інші. Сьогодні загальна чисельність садових ділянок складає 256 одиниць.</span><br>
+    <span data-i18n="about.p3">Відповідно до виписки з Єдиного державного реєстру юридичних осіб та фізичних осіб-підприємців місце знаходження юридичної особи: Україна, 67631, Одеська область, Біляївський р-н, с.Берегове.</span><br>
+
+    <h2 data-i18n="fees.types">Види членських внесків</h2>
+    <h3 data-i18n="fees.joinTitle">Вступний внесок</h3>
+    <span data-i18n="fees.joinDesc">Грошовий чи інший майновий неповоротний внесок, який зобов'язана сплатити особа у разі вступу до організації.</span>
+    <h3 data-i18n="fees.memberTitle">Членський внесок</h3>
+    <span data-i18n="fees.memberDesc">Грошовий неповоротний внесок, який періодично сплачується членом об'єднання для забезпечення поточної діяльності об'єднання.</span>
+    <h3 data-i18n="fees.targetTitle">Цільові внески</h3>
+    <span data-i18n="fees.targetDesc">Грошові, інші майнові та немайнові цінності членів організації, що вноситься додатково для забезпечення статутної діяльності організації.</span>
+
+    <h2 data-i18n="fees.tableTitle">Поточні та попередні членські внески та їх розміри</h2>
 
     <!-- Вступний внесок -->
-    <h3 data-i18n="intro_fee_title">Вступний внесок</h3>
-    <table class="fees-grouped intro-fee">
+    <h3 data-i18n="fees.joinTitle">Вступний внесок</h3>
+    <table class="bordered" width="100%">
       <thead>
         <tr>
-          <th data-i18n="intro_case">Вступ</th>
-          <th data-i18n="amount">Розмір</th>
-          <th data-i18n="basis">Підстава</th>
+          <th width="25%"><em data-i18n="t.join.header.action">Вступ</em></th>
+          <th width="50%"><em data-i18n="t.join.header.amount">Розмір</em></th>
+          <th width="25%"><em data-i18n="t.join.header.base">Підстава</em></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td data-i18n="intro_purchase">При купівлі&nbsp;– продажу (даруванні) ділянки</td>
-          <td>200&nbsp;грн</td>
-          <td data-i18n="charter">Статут</td>
+          <td style="text-align:center;" data-i18n="t.join.row1.action">При купівлі– продажу (даруванні) ділянки</td>
+          <td style="text-align:center;" data-i18n="t.join.row1.amount">200 грн</td>
+          <td style="text-align:center;" data-i18n="t.join.row1.base">Статут</td>
         </tr>
         <tr>
-          <td data-i18n="intro_family">У разі родинного переоформлення</td>
-          <td data-i18n="free">Безкоштовно</td>
-          <td data-i18n="charter">Статут</td>
+          <td style="text-align:center;" data-i18n="t.join.row2.action">У разі родинного переоформлення</td>
+          <td style="text-align:center;" data-i18n="t.join.row2.amount">Безкоштовно</td>
+          <td style="text-align:center;" data-i18n="t.join.row2.base">Статут</td>
         </tr>
       </tbody>
     </table>
 
     <!-- Членські внески -->
-    <h3 data-i18n="years_title">Членські внески</h3>
-    <table class="fees-grouped">
+    <h3 data-i18n="fees.memberTitle">Членські внески</h3>
+    <table class="bordered" width="100%">
       <thead>
         <tr>
-          <th data-i18n="years">Роки</th>
-          <th>Внески</th>
-          <th data-i18n="amount">Сума</th>
+          <th width="25%"><em data-i18n="t.member.header.years">Роки</em></th>
+          <th width="50%"><em data-i18n="t.member.header.type">Внески</em></th>
+          <th width="25%"><em data-i18n="t.member.header.sum">Сума</em></th>
         </tr>
       </thead>
       <tbody>
-        <!-- 2025 -->
         <tr>
-          <td rowspan="2" class="yearcell">
-            <div>2025</div>
-            <div class="subnote">строк до&nbsp;1&nbsp;серпня&nbsp;2025&nbsp;р.</div>
+          <td rowspan="2" style="text-align:center;vertical-align:middle;font-weight:bold;">
+            2025
+            <div style="font-size:12px;color:#666;font-weight:500;" data-i18n="t.member.2025.note">строк до 1 серпня 2025 р.</div>
           </td>
-          <td>До 0,6 сот</td>
-          <td>500&nbsp;грн</td>
+          <td style="text-align:center;" data-i18n="t.member.to06">До 0,6 сот</td>
+          <td style="text-align:center;">500 грн</td>
         </tr>
         <tr>
-          <td>Більше 0,6 сот</td>
-          <td>1000&nbsp;грн</td>
-        </tr>
-
-        <!-- 2024 -->
-        <tr>
-          <td rowspan="2" class="yearcell"><div>2024</div></td>
-          <td>До 0,6 сот</td>
-          <td>420&nbsp;грн</td>
-        </tr>
-        <tr>
-          <td>Більше 0,6 сот</td>
-          <td>840&nbsp;грн</td>
+          <td style="text-align:center;" data-i18n="t.member.gt06">Більше 0,6 сот</td>
+          <td style="text-align:center;">1000 грн</td>
         </tr>
 
-        <!-- 2018–2023 -->
         <tr>
-          <td rowspan="2" class="yearcell"><div>2018–2023</div></td>
-          <td>До 0,6 сот</td>
-          <td>360&nbsp;грн</td>
+          <td rowspan="2" style="text-align:center;vertical-align:middle;font-weight:bold;">2024</td>
+          <td style="text-align:center;" data-i18n="t.member.to06">До 0,6 сот</td>
+          <td style="text-align:center;">420 грн</td>
         </tr>
         <tr>
-          <td>Більше 0,6 сот</td>
-          <td>720&nbsp;грн</td>
-        </tr>
-
-        <!-- 2008–2017 -->
-        <tr>
-          <td rowspan="2" class="yearcell"><div>2008–2017</div></td>
-          <td>До 0,6 сот</td>
-          <td>180&nbsp;грн</td>
-        </tr>
-        <tr>
-          <td>Більше 0,6 сот</td>
-          <td>360&nbsp;грн</td>
+          <td style="text-align:center;" data-i18n="t.member.gt06">Більше 0,6 сот</td>
+          <td style="text-align:center;">840 грн</td>
         </tr>
 
-        <!-- 2007 -->
         <tr>
-          <td rowspan="2" class="yearcell"><div>2007</div></td>
-          <td>До 0,6 сот</td>
-          <td>90&nbsp;грн</td>
+          <td rowspan="2" style="text-align:center;vertical-align:middle;font-weight:bold;">2018–2023</td>
+          <td style="text-align:center;" data-i18n="t.member.to06">До 0,6 сот</td>
+          <td style="text-align:center;">360 грн</td>
         </tr>
         <tr>
-          <td>Більше 0,6 сот</td>
-          <td>180&nbsp;грн</td>
+          <td style="text-align:center;" data-i18n="t.member.gt06">Більше 0,6 сот</td>
+          <td style="text-align:center;">720 грн</td>
+        </tr>
+
+        <tr>
+          <td rowspan="2" style="text-align:center;vertical-align:middle;font-weight:bold;">2008–2017</td>
+          <td style="text-align:center;" data-i18n="t.member.to06">До 0,6 сот</td>
+          <td style="text-align:center;">180 грн</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;" data-i18n="t.member.gt06">Більше 0,6 сот</td>
+          <td style="text-align:center;">360 грн</td>
+        </tr>
+
+        <tr>
+          <td rowspan="2" style="text-align:center;vertical-align:middle;font-weight:bold;">2007</td>
+          <td style="text-align:center;" data-i18n="t.member.to06">До 0,6 сот</td>
+          <td style="text-align:center;">90 грн</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;" data-i18n="t.member.gt06">Більше 0,6 сот</td>
+          <td style="text-align:center;">180 грн</td>
         </tr>
       </tbody>
     </table>
 
-    <!-- Цільові внески -->
-    <h3 data-i18n="target_fees_title">Цільові внески</h3>
-    <table class="fees-grouped">
+    <!-- Цільові -->
+    <h3 data-i18n="fees.targetTitle">Цільові внески</h3>
+    <table class="bordered" width="100%">
       <thead>
         <tr>
-          <th data-i18n="years">Роки</th>
-          <th data-i18n="target">Ціль</th>
-          <th data-i18n="amount">Розмір</th>
-          <th data-i18n="terms">Строки / Примітка</th>
+          <th width="17%"><em data-i18n="t.target.header.years">Роки</em></th>
+          <th width="40%"><em data-i18n="t.target.header.goal">Ціль</em></th>
+          <th width="23%"><em data-i18n="t.target.header.amount">Розмір</em></th>
+          <th width="20%"><em data-i18n="t.target.header.deadline">Строки / Примітка</em></th>
         </tr>
       </thead>
       <tbody>
-        <!-- 2025 -->
         <tr>
-          <td rowspan="3" class="yearcell"><div>2025</div></td>
-          <td>Благоустрій</td>
-          <td>500&nbsp;грн</td>
-          <td>До&nbsp;1&nbsp;червня поточного року</td>
+          <td rowspan="3" style="text-align:center;vertical-align:middle;font-weight:bold;">2025</td>
+          <td data-i18n="goal.improve">Благоустрій</td>
+          <td style="text-align:center;">500 грн</td>
+          <td style="text-align:center;" data-i18n="deadline.jun">До 1 червня поточного року</td>
         </tr>
         <tr>
-          <td>Обслуговування системи водопостачання</td>
-          <td>800&nbsp;грн</td>
-          <td>До&nbsp;1&nbsp;липня поточного року</td>
+          <td data-i18n="goal.water">Обслуговування системи водопостачання</td>
+          <td style="text-align:center;">800 грн</td>
+          <td style="text-align:center;" data-i18n="deadline.jul">До 1 липня поточного року</td>
         </tr>
         <tr>
-          <td>Компенсація втрат ВВЛ та трансформаторі</td>
-          <td>1250&nbsp;грн</td>
-          <td>Щоквартально по&nbsp;312,50&nbsp;грн з абонентів масиву «Зав’яза»</td>
-        </tr>
-
-        <!-- 2024 -->
-        <tr>
-          <td rowspan="5" class="yearcell"><div>2024</div></td>
-          <td>Благоустрій</td>
-          <td>500&nbsp;грн</td>
-          <td>«Зав’яза»</td>
-        </tr>
-        <tr>
-          <td>Обслуговування системи водопостачання</td>
-          <td>720&nbsp;грн</td>
-          <td>З користувачів водогону</td>
-        </tr>
-        <tr>
-          <td>Компенсація втрат ВВЛ та трансформаторі</td>
-          <td>508&nbsp;грн</td>
-          <td>Абонентів масиву «Зав’яза»</td>
-        </tr>
-        <tr>
-          <td>Ремонт лічильника</td>
-          <td>1500</td>
-          <td>З користувачів водогону</td>
-        </tr>
-        <tr>
-          <td>Ремонт накопичувальних ємностей</td>
-          <td>500</td>
-          <td>З користувачів водогону</td>
+          <td data-i18n="goal.vvlLoss">Компенсація втрат ВВЛ</td>
+          <td style="text-align:center;">1250 грн</td>
+          <td style="text-align:center;" data-i18n="note.quarter">Щоквартально по 312,50 грн з абонентів масиву «Зав’яза»</td>
         </tr>
 
-        <!-- 2023 -->
         <tr>
-          <td rowspan="5" class="yearcell"><div>2023</div></td>
-          <td>Ремонт водогінного вузла</td>
-          <td>2500</td>
-          <td>З користувачів водогону</td>
+          <td rowspan="5" style="text-align:center;vertical-align:middle;font-weight:bold;">2024</td>
+          <td data-i18n="goal.improve">Благоустрій</td>
+          <td style="text-align:center;">500 грн</td>
+          <td style="text-align:center;" data-i18n="goal.zav">«Зав’яза»</td>
         </tr>
         <tr>
-          <td>Обслуговування системи водопостачання</td>
-          <td>720&nbsp;грн</td>
-          <td></td>
+          <td data-i18n="goal.water">Обслуговування системи водопостачання</td>
+          <td style="text-align:center;">720 грн</td>
+          <td style="text-align:center;" data-i18n="note.waterUsers">З користувачів водогону</td>
         </tr>
         <tr>
-          <td>Ремонт трансформатора</td>
-          <td>2500</td>
-          <td>Для користувачів «Зав’яза»</td>
+          <td data-i18n="goal.vvlLoss">Компенсація втрат ВВЛ</td>
+          <td style="text-align:center;">508 грн</td>
+          <td style="text-align:center;" data-i18n="note.zyav">Абонентів масиву «Зав’яза»</td>
         </tr>
         <tr>
-          <td>Благоустрій</td>
-          <td>500&nbsp;грн</td>
-          <td></td>
+          <td data-i18n="goal.meterRepair">Ремонт лічильника</td>
+          <td style="text-align:center;">1500</td>
+          <td style="text-align:center;" data-i18n="note.waterUsers">З користувачів водогону</td>
         </tr>
         <tr>
-          <td>Компенсація втрат ВВЛ та трансформаторі</td>
-          <td>508&nbsp;грн</td>
-          <td>Абонентів масиву «Зав’яза»</td>
+          <td data-i18n="goal.tanks">Ремонт накопичувальних ємностей</td>
+          <td style="text-align:center;">500</td>
+          <td style="text-align:center;" data-i18n="note.waterUsers">З користувачів водогону</td>
         </tr>
 
-        <!-- 2021–2022 -->
         <tr>
-          <td rowspan="4" class="yearcell">
-            <div>2021–2022</div>
-            <div class="subnote">щорічно</div>
+          <td rowspan="5" style="text-align:center;vertical-align:middle;font-weight:bold;">2023</td>
+          <td data-i18n="goal.hubRepair">Ремонт водогінного вузла</td>
+          <td style="text-align:center;">2500</td>
+          <td style="text-align:center;" data-i18n="note.waterUsers">З користувачів водогону</td>
+        </tr>
+        <tr>
+          <td data-i18n="goal.water">Обслуговування системи водопостачання</td>
+          <td style="text-align:center;">720 грн</td>
+          <td style="text-align:center;"></td>
+        </tr>
+        <tr>
+          <td data-i18n="goal.transformer">Ремонт трансформатора</td>
+          <td style="text-align:center;">2500</td>
+          <td style="text-align:center;" data-i18n="note.forZyav">Для користувачів «Зав’яза»</td>
+        </tr>
+        <tr>
+          <td data-i18n="goal.improve">Благоустрій</td>
+          <td style="text-align:center;">500 грн</td>
+          <td style="text-align:center;"></td>
+        </tr>
+        <tr>
+          <td data-i18n="goal.vvlLoss">Компенсація втрат ВВЛ</td>
+          <td style="text-align:center;">508 грн</td>
+          <td style="text-align:center;" data-i18n="note.zyav">Абонентів масиву «Зав’яза»</td>
+        </tr>
+
+        <tr>
+          <td rowspan="4" style="text-align:center;vertical-align:middle;font-weight:bold;">
+            2021–2022
+            <div style="font-size:12px;color:#666;font-weight:500;" data-i18n="note.yearly">щорічно</div>
           </td>
-          <td>Благоустрій</td>
-          <td>500&nbsp;грн</td>
-          <td>«Зав’яза» • щорічно</td>
+          <td data-i18n="goal.improve">Благоустрій</td>
+          <td style="text-align:center;">500 грн</td>
+          <td style="text-align:center;"> <span data-i18n="note.yearly"> «Зав’яза» щорічно</span></td>
         </tr>
         <tr>
-          <td>Обслуговування системи водопостачання</td>
-          <td>400&nbsp;грн за 2021&nbsp;р;&nbsp;600&nbsp;грн за 2022&nbsp;р</td>
-          <td>З користувачів водогону</td>
+          <td data-i18n="goal.water">Обслуговування системи водопостачання</td>
+          <td style="text-align:center;" data-i18n="amount.21_22">400 грн за 2021 р.; 600 грн за 2022 р.</td>
+          <td style="text-align:center;" data-i18n="note.waterUsers">З користувачів водогону</td>
         </tr>
         <tr>
-          <td>Компенсація втрат ВВЛ та трансформаторі</td>
-          <td>508 грн</td>
-          <td>Абонентів масиву «Зав’яза»</td>
+          <td data-i18n="goal.vvlLoss">Компенсація втрат ВВЛ</td>
+          <td style="text-align:center;">508 грн</td>
+          <td style="text-align:center;" data-i18n="note.zyav">Абонентів масиву «Зав’яза»</td>
         </tr>
         <tr>
-          <td>Ремонт баків</td>
-          <td>300 грн</td>
-          <td>З користувачів водогону</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <!-- Тарифи: електроенергія -->
-    <h3 data-i18n="electricity_title">Оплата за електроенергію</h3>
-    <table class="fees-grouped tariffs-table">
-      <thead>
-        <tr>
-          <th data-i18n="name">Найменування</th>
-          <th data-i18n="tariff">Тарифи за електроенергію, за 1&nbsp;кВт·год<br><small>(згідно показників лічильника на дату оплати)</small></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-i18n="meter_single">Однозонний (однотарифний) лічильник</td>
-          <td>4&nbsp;грн&nbsp;60&nbsp;коп з&nbsp;01.05.2024&nbsp;р.</td>
+          <td data-i18n="goal.tankRepair">Ремонт баків</td>
+          <td style="text-align:center;">300 грн</td>
+          <td style="text-align:center;" data-i18n="note.waterUsers">З користувачів водогону</td>
         </tr>
       </tbody>
     </table>
 
-    <!-- Тарифи: водопостачання -->
-    <h3 data-i18n="water_title">Оплата за водопостачання</h3>
-    <table class="fees-grouped tariffs-table">
+    <!-- Тарифи електроенергії -->
+    <h2 data-i18n="power.title">Оплата за електроенергію</h2>
+    <table class="bordered" width="100%">
       <thead>
         <tr>
-          <th data-i18n="name">Найменування</th>
-          <th data-i18n="tariff_water">Тарифи за водопостачання, з 1&nbsp;м³<br><small>(згідно показників лічильника на дату оплати)</small></th>
+          <th width="25%"><em data-i18n="power.name">Найменування</em></th>
+          <th width="75%"><em data-i18n="power.tariff">Тарифи за електроенергію, за 1 кВт·год (згідно показників лічильника на дату оплати)</em></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td data-i18n="meter">Лічильник</td>
-          <td>40&nbsp;грн&nbsp;00&nbsp;коп з&nbsp;01.06.2024&nbsp;р.</td>
+          <td style="text-align:center;" data-i18n="power.single">Однозонний (однотарифний) лічильник</td>
+          <td style="text-align:center;" data-i18n="power.value">4 грн 60 коп з 01.05.2024 р.</td>
         </tr>
       </tbody>
     </table>
 
-    <!-- Податок на землю (таблиця) -->
-    <h3 data-i18n="land_tax_title">Податок на землю</h3>
-    <table class="fees-grouped land-tax-table">
+    <!-- Вода -->
+    <h2 data-i18n="water.title">Оплата за водопостачання</h2>
+    <table class="bordered" width="100%">
       <thead>
         <tr>
-          <th data-i18n="land_tax_param">Параметр</th>
-          <th data-i18n="land_tax_value">Значення</th>
+          <th width="25%"><em data-i18n="water.name">Найменування</em></th>
+          <th width="75%"><em data-i18n="water.tariff">Тарифи за водопостачання, з 1 м³ (згідно показників лічильника на дату оплати)</em></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td data-i18n="for_own_plot">Категорія</td>
-          <td data-i18n="for_own_plot_val">За власну ділянку</td>
+          <td style="text-align:center;" data-i18n="water.meter">Лічильник</td>
+          <td style="text-align:center;" data-i18n="water.value">40 грн 00 коп з 01.06.2024 р.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Податок на землю -->
+    <h2 data-i18n="land.title">Податок на землю</h2>
+    <table class="bordered" width="100%">
+      <thead>
+        <tr>
+          <th><em data-i18n="land.param">Параметр</em></th>
+          <th><em data-i18n="land.value">Значення</em></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align:center;" data-i18n="land.category">Категорія</td>
+          <td style="text-align:center;" data-i18n="land.ownPlot">За власну ділянку</td>
         </tr>
         <tr>
-          <td data-i18n="cadastral_label">Умова</td>
-          <td data-i18n="cadastral">У разі наявності кадастрового номера</td>
+          <td style="text-align:center;" data-i18n="land.condition">Умова</td>
+          <td style="text-align:center;" data-i18n="land.kad">У разі наявності кадастрового номера</td>
         </tr>
         <tr>
-          <td data-i18n="calc_contact_label">Розрахунок</td>
-          <td data-i18n="calc_contact">За розрахунком звертайтесь до Маринівської сільради Біляївського району</td>
+          <td style="text-align:center;" data-i18n="land.calc">Розрахунок</td>
+          <td style="text-align:center;" data-i18n="land.calcText">За розрахунком звертайтесь до Маринівської сільради Біляївського району</td>
         </tr>
         <tr>
-          <td data-i18n="deadline_tax_label">Строк сплати</td>
-          <td data-i18n="deadline_tax">До&nbsp;1&nbsp;серпня поточного року</td>
+          <td style="text-align:center;" data-i18n="land.deadline">Строк сплати</td>
+          <td style="text-align:center;" data-i18n="land.deadlineVal">До 1 серпня поточного року</td>
         </tr>
         <tr>
-          <td data-i18n="contacts_label">Контакти</td>
-          <td>
-            <span>т.м.&nbsp;067&nbsp;420&nbsp;87&nbsp;52 — Світлана&nbsp;Миколаївна</span><br>
-            <span>с.&nbsp;Маринівка, вул.&nbsp;Покровська,&nbsp;1,&nbsp;каб.&nbsp;3</span>
+          <td style="text-align:center;" data-i18n="land.contacts">Контакти</td>
+          <td style="text-align:center;">
+            <span data-i18n="land.phone">т.м.0674208752 — СвітланаМиколаївна</span><br>
+            <span data-i18n="land.addr">с.Маринівка, вул.Покровська,1,каб.3</span>
           </td>
         </tr>
       </tbody>
     </table>
 
     <!-- Контакти -->
-    <h3 data-i18n="contacts_title">Наші контакти</h3>
-    <table class="fees-grouped contacts-table">
+    <h2 data-i18n="contacts.title">Наші контакти</h2>
+    <table class="bordered" width="100%">
       <thead>
         <tr>
-          <th data-i18n="position_fio">Посада / ПІБ</th>
-          <th data-i18n="phone">Прямий номер</th>
+          <th><em data-i18n="contacts.col1">Посада / ПІБ</em></th>
+          <th><em data-i18n="contacts.col2">Прямий номер</em></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Голова кооперативу — Сінявський Леонід Олександрович</td>
-          <td><a href="tel:+380674806703">+38&nbsp;067&nbsp;480&nbsp;67&nbsp;03</a></td>
+          <td data-i18n="contacts.c1">Голова кооперативу — Сінявський Леонід Олександрович</td>
+          <td><a href="tel:+380674806703">+380674806703</a></td>
         </tr>
         <tr>
-          <td>Уповноважений представник голови СК «Харчовик-2» по питаннях ведення водного господарства — Муратов Сергій Миколайович</td>
-          <td><a href="tel:+380952146848">+38&nbsp;095&nbsp;214&nbsp;68&nbsp;48</a></td>
+          <td data-i18n="contacts.c2">Уповноважений представник голови СК «Харчовик-2» по питаннях ведення водного господарства — Муратов Сергій Миколайович</td>
+          <td><a href="tel:+380952146848">+380952146848</a></td>
         </tr>
         <tr>
-          <td>Уповноважений представник голови СК «Харчовик-2» по електротехнічному господарству — Єрьоменко Олексій Іванович</td>
-          <td><a href="tel:+380978485355">+38&nbsp;097&nbsp;848&nbsp;53&nbsp;55</a></td>
+          <td data-i18n="contacts.c3">Уповноважений представник голови СК «Харчовик-2» по електротехнічному господарству — Єрьоменко Олексій Іванович</td>
+          <td><a href="tel:+380978485355">+380978485355</a></td>
         </tr>
       </tbody>
     </table>
 
-    <p class="email-box">
-      <strong>Всі побажання та пропозиції, будь ласка, пишіть на нашу електронну пошту: </strong>
-      <a href="mailto:hachovik2@gmail.com">hachovik2@gmail.com</a>
+    <p style="text-align:center;margin-top:8px;">
+      <strong data-i18n="footer.feedback">Всі побажання та пропозиції, будь ласка, пишіть на нашу електронну пошту: </strong>
+      <a href="mailto:hachovik2@gmail.com">hachovik2@gmail.com</a><br>
+      <i data-i18n="footer.rights">© 2025 Харчовик-2. Всі права захищено.</i>
     </p>
-
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <h3>Харчовик-2</h3>
-        <p class="copy">© 2025 Харчовик-2. Всі права захищено.</p>
-      </div>
-    </div>
-  </footer>
+  <script>
+    // ====== i18n словари ======
+    const I18N = {
+      uk: {
+        "meta.title": 'СК "Харчовик-2" — садівничий масив, Одеська область',
+        "meta.desc": 'Офіційний сайт СК «Харчовик-2» — інформація для садоводів, особистий кабінет та зручна оплата всіх внесків, новини в Viber і Telegram-каналі, документи та прямі контакти.',
+        "btn.uk": "Укр",
+        "btn.ru": "Рус",
+        "img.logoAlt": "Логотип Харчовик-2",
+        "img.docsAlt": "Офіційні документи",
+        "pay.hint": "Зручно сплачуйте членські, цільові внески та інші платежі",
+        "pay.cabinet": "Особистий кабінет",
 
-  <script src="lang.js"></script>
-</body>
-</html>
+        "h.main": "Садовий кооператив «Харчовик-2»",
+        "about.title": "Про кооператив",
+        "about.p1": "Це територія площею 13.2 га, яку було виділено для колективного садівництва згідно з рішення виконкома Біляївської районної ради народних депутатів № 502 від 1 грудня 1988 року.",
+        "about.p2": "Засновниками СК «Харчовик-2» на даній земельній ділянці були різні садівничі масиви:  АТ «Одесхарчокомбінат», ОКБ, ДОСААФ та інші. Сьогодні загальна чисельність садових ділянок складає 256 одиниць.",
+        "about.p3": "Відповідно до виписки з Єдиного державного реєстру юридичних осіб та фізичних осіб-підприємців місце знаходження юридичної особи: Україна, 67631, Одеська область, Біляївський р-н, с.Берегове.",
+
+        "fees.types": "Види членських внесків",
+        "fees.joinTitle": "Вступний внесок",
+        "fees.joinDesc": "Грошовий чи інший майновий неповоротний внесок, який зобов'язана сплатити особа у разі вступу до організації.",
+        "fees.memberTitle": "Членський внесок",
+        "fees.memberDesc": "Грошовий неповоротний внесок, який періодично сплачується членом об'єднання для забезпечення поточної діяльності об'єднання.",
+        "fees.targetTitle": "Цільові внески",
+        "fees.targetDesc": "Грошові, інші майнові та немайнові цінності членів організації, що вноситься додатково для забезпечення статутної діяльності організації.",
+        "fees.tableTitle": "Поточні та попередні членські внески та їх розміри",
+
+        "t.join.header.action": "Вступ",
+        "t.join.header.amount": "Розмір",
+        "t.join.header.base": "Підстава",
+        "t.join.row1.action": "При купівлі– продажу (даруванні) ділянки",
+        "t.join.row1.amount": "200 грн",
+        "t.join.row1.base": "Статут",
+        "t.join.row2.action": "У разі родинного переоформлення",
+        "t.join.row2.amount": "Безкоштовно",
+        "t.join.row2.base": "Статут",
+
+        "t.member.header.years": "Роки",
+        "t.member.header.type": "Внески",
+        "t.member.header.sum": "Сума",
+        "t.member.2025.note": "строк до 1 серпня 2025 р.",
+        "t.member.to06": "До 0,6 сот",
+        "t.member.gt06": "Більше 0,6 сот",
+
+        "t.target.header.years": "Роки",
+        "t.target.header.goal": "Ціль",
+        "t.target.header.amount": "Розмір",
+        "t.target.header.deadline": "Строки / Примітка",
+        "goal.improve": "Благоустрій",
+        "goal.water": "Обслуговування системи водопостачання",
+        "goal.vvlLoss": "Компенсація втрат ВВЛ",
+        "goal.meterRepair": "Ремонт лічильника",
+        "goal.tanks": "Ремонт накопичувальних ємностей",
+        "goal.hubRepair": "Ремонт водогінного вузла",
+        "goal.transformer": "Ремонт трансформатора",
+        "goal.tankRepair": "Ремонт баків",
+        "deadline.jun": "До 1 червня поточного року",
+        "deadline.jul": "До 1 липня поточного року",
+        "note.quarter": "Щоквартально по 312,50 грн з абонентів масиву «Зав’яза»",
+        "note.waterUsers": "З користувачів водогону",
+        "note.zyav": "Абонентів масиву «Зав’яза»",
+        "note.forZyav": "Для користувачів «Зав’яза»",
+        "note.yearly": "щорічно",
+        "amount.21_22": "400 грн за 2021 р.; 600 грн за 2022 р.",
+"goal.zav":"«Зав’яза»",
+        "power.title": "Оплата за електроенергію",
+        "power.name": "Найменування",
+        "power.tariff": "Тарифи за електроенергію, за 1 кВт·год (згідно показників лічильника на дату оплати)",
+        "power.single": "Однозонний (однотарифний) лічильник",
+        "power.value": "4 грн 60 коп з 01.05.2024 р.",
+
+        "water.title": "Оплата за водопостачання",
+        "water.name": "Найменування",
+        "water.tariff": "Тарифи за водопостачання, з 1 м³ (згідно показників лічильника на дату оплати)",
+        "water.meter": "Лічильник",
+        "water.value": "40 грн 00 коп з 01.06.2024 р.",
+
+        "land.title": "Податок на землю",
+        "land.param": "Параметр",
+        "land.value": "Значення",
+        "land.category": "Категорія",
+        "land.ownPlot": "За власну ділянку",
+        "land.condition": "Умова",
+        "land.kad": "У разі наявності кадастрового номера",
+        "land.calc": "Розрахунок",
+        "land.calcText": "За розрахунком звертайтесь до Маринівської сільради Біляївського району",
+        "land.deadline": "Строк сплати",
+        "land.deadlineVal": "До 1 серпня поточного року",
+        "land.contacts": "Контакти",
+        "land.phone": "т.м.0674208752 — СвітланаМиколаївна",
+        "land.addr": "с.Маринівка, вул.Покровська,1,каб.3",
+
+        "contacts.title": "Наші контакти",
+        "contacts.col1": "Посада / ПІБ",
+        "contacts.col2": "Прямий номер",
+        "contacts.c1": "Голова кооперативу — Сінявський Леонід Олександрович",
+        "contacts.c2": "Уповноважений представник голови СК «Харчовик-2» по питаннях ведення водного господарства — Муратов Сергій Миколайович",
+        "contacts.c3": "Уповноважений представник голови СК «Харчовик-2» по електротехнічному господарству — Єрьоменко Олексій Іванович",
+
+        "footer.feedback": "Всі побажання та пропозиції, будь ласка, пишіть на нашу електронну пошту: ",
+        "footer.rights": "© 2025 Харчовик-2. Всі права захищено."
+      },
+      ru: {
+        "meta.title": 'СК "Харчовик-2" — садовый массив, Одесская область',
+        "meta.desc": 'Официальный сайт СК «Харчовик-2» — информация для садоводов, личный кабинет и удобная оплата всех взносов, новости в Viber и Telegram, документы и прямые контакты.',
+        "btn.uk": "Укр",
+        "btn.ru": "Рус",
+        "img.logoAlt": "Логотип Харчовик-2",
+        "img.docsAlt": "Официальные документы",
+        "pay.hint": "Удобно оплачивайте членские, целевые взносы и другие платежи",
+        "pay.cabinet": "Личный кабинет",
+
+        "h.main": "Садовый кооператив «Харчовик-2»",
+        "about.title": "О кооперативе",
+        "about.p1": "Это территория площадью 13,2 га, выделенная для коллективного садоводства согласно решению исполкома Беляевского районного совета народных депутатов № 502 от 1 декабря 1988 года.",
+        "about.p2": "Основателями СК «Харчовик-2» на данной земельной участке были разные садоводческие массивы: АО «Одесхаркокомбинат», ОКБ, ДОСААФ и другие. Сегодня общее количество садовых участков составляет 256 единиц.",
+        "about.p3": "Согласно выписке из Единого государственного реестра юридических лиц и физических лиц-предпринимателей местонахождение юрлица: Украина, 67631, Одесская область, Беляевский р-н, с. Береговое.",
+
+        "fees.types": "Виды членских взносов",
+        "fees.joinTitle": "Вступительный взнос",
+        "fees.joinDesc": "Денежный или иной имущественный безвозвратный взнос, который обязан уплатить человек при вступлении в организацию.",
+        "fees.memberTitle": "Членский взнос",
+        "fees.memberDesc": "Безвозвратный денежный взнос, который периодически уплачивается членом объединения для обеспечения текущей деятельности.",
+        "fees.targetTitle": "Целевые взносы",
+        "fees.targetDesc": "Денежные, иные имущественные и нематериальные ценности членов организации, вносимые дополнительно для обеспечения уставной деятельности.",
+        "fees.tableTitle": "Текущие и прошлые членские взносы и их размеры",
+
+        "t.join.header.action": "Действие",
+        "t.join.header.amount": "Размер",
+        "t.join.header.base": "Основание",
+        "t.join.row1.action": "При купле-продаже (дарении) участка",
+        "t.join.row1.amount": "200 грн",
+        "t.join.row1.base": "Устав",
+        "t.join.row2.action": "При семейном переоформлении",
+        "t.join.row2.amount": "Бесплатно",
+        "t.join.row2.base": "Устав",
+
+        "t.member.header.years": "Годы",
+        "t.member.header.type": "Взносы",
+        "t.member.header.sum": "Сумма",
+        "t.member.2025.note": "срок до 1 августа 2025 г.",
+        "t.member.to06": "До 0,6 соток",
+        "t.member.gt06": "Более 0,6 соток",
+
+        "t.target.header.years": "Годы",
+        "t.target.header.goal": "Цель",
+        "t.target.header.amount": "Размер",
+        "t.target.header.deadline": "Сроки / Примечание",
+        "goal.improve": "Благоустройство",
+        "goal.water": "Обслуживание системы водоснабжения",
+        "goal.vvlLoss": "Компенсация потерь ВВЛ ",
+        "goal.meterRepair": "Ремонт счётчика",
+        "goal.tanks": "Ремонт накопительных ёмкостей",
+        "goal.hubRepair": "Ремонт водопроводного узла",
+        "goal.transformer": "Ремонт трансформатора",
+        "goal.tankRepair": "Ремонт баков",
+        "goal.zav":"«Заовражье»",
+        "deadline.jun": "До 1 июня текущего года",
+        "deadline.jul": "До 1 июля текущего года",
+        "note.quarter": "Ежеквартально по 312,50 грн с абонентов массива «Заовражье»",
+        "note.waterUsers": "С пользователей водопровода",
+        "note.zyav": "Абонентов массива «Заовражье»",
+        "note.forZyav": "Для пользователей «Заовражье»",
+            "note.yearly": "«Заовражье» ежегодно",
+    "amount.21_22": "400 грн за 2021 г.; 600 грн за 2022 г.",
+
+    "power.title": "Оплата за электроэнергию",
+    "power.name": "Наименование",
+    "power.tariff": "Тарифы за электроэнергию, за 1 кВт·ч (согласно показаниям счётчика на дату оплаты)",
+    "power.single": "Однозонный (однотарифный) счётчик",
+    "power.value": "4 грн 60 коп с 01.05.2024 г.",
+
+    "water.title": "Оплата за водоснабжение",
+    "water.name": "Наименование",
+    "water.tariff": "Тарифы за водоснабжение, за 1 м³ (согласно показаниям счётчика на дату оплаты)",
+    "water.meter": "Счётчик",
+    "water.value": "40 грн 00 коп с 01.06.2024 г.",
+
+    "land.title": "Налог на землю",
+    "land.param": "Параметр",
+    "land.value": "Значение",
+    "land.category": "Категория",
+    "land.ownPlot": "За собственный участок",
+    "land.condition": "Условие",
+    "land.kad": "При наличии кадастрового номера",
+    "land.calc": "Расчёт",
+    "land.calcText": "За расчётом обращайтесь в Мариновский сельсовет Беляевского района",
+    "land.deadline": "Срок уплаты",
+    "land.deadlineVal": "До 1 августа текущего года",
+    "land.contacts": "Контакты",
+    "land.phone": "т.м.0674208752 — Светлана Николаевна",
+    "land.addr": "с. Мариновка, ул. Покровская, 1, каб. 3",
+
+    "contacts.title": "Наши контакты",
+    "contacts.col1": "Должность / ФИО",
+    "contacts.col2": "Прямой номер",
+    "contacts.c1": "Председатель кооператива — Синявский Леонид Александрович",
+    "contacts.c2": "Уполномоченный представитель председателя СК «Харчовик-2» по вопросам водного хозяйства — Муратов Сергей Николаевич",
+    "contacts.c3": "Уполномоченный представитель председателя СК «Харчовик-2» по электрохозяйству — Ерёменко Алексей Иванович",
+
+    "footer.feedback": "Все пожелания и предложения, пожалуйста, пишите на нашу электронную почту: ",
+    "footer.rights": "© 2025 Харчовик-2. Все права защищены."
+  }}
+
+  // --- переводчик ---
+  function applyI18n(lang) {
+    const dict = I18N[lang] || I18N.uk;
+
+    // Текстовые узлы
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] != null) el.innerHTML = dict[key];
+    });
+
+    // Альты картинок
+    document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+      const key = el.getAttribute('data-i18n-alt');
+      if (dict[key] != null) el.setAttribute('alt', dict[key]);
+    });
+
+    // Заголовок и описание
+    const titleEl = document.querySelector('title[data-i18n="meta.title"]');
+    if (titleEl && dict['meta.title']) titleEl.textContent = dict['meta.title'];
+
+    const metaDesc = document.querySelector('meta[name="description"][data-i18n="meta.desc"]');
+    if (metaDesc && dict['meta.desc']) metaDesc.setAttribute('content', dict['meta.desc']);
+
+    // Язык документа и активные кнопки
+    document.documentElement.lang = lang;
+    const ukBtn = document.querySelector('button[onclick*="setLanguage(\'uk\')"]');
+    const ruBtn = document.querySelector('button[onclick*="setLanguage(\'ru\')"]');
+    ukBtn && ukBtn.classList.toggle('active', lang === 'uk');
+    ruBtn && ruBtn.classList.toggle('active', lang === 'ru');
+  }
+
+  function setLanguage(lang) {
+    localStorage.setItem('lang', lang);
+    applyI18n(lang);
+  }
+
+  // Автовыбор при загрузке
+  document.addEventListener('DOMContentLoaded', () => {
+    const saved = localStorage.getItem('lang');
+    const initial = saved || (/^ru/i.test(navigator.language) ? 'ru' : 'uk');
+    applyI18n(initial);
+  });
+</script>
