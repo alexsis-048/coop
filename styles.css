@@ -1,157 +1,311 @@
-/* =========================
-   Харчовик-2 — стилі таблиць «як на референсі»
-   ========================= */
 
-:root{
-  --page: #f1f3f6;          /* трохи сіріший фон усього сайту */
-  --bg: #ffffff;
-  --bg-soft: #f8fafc;
-  --text: #1f2937;
-  --muted: #6b7280;
-
-  /* таблиці */
-  --tbl-border: #d7dce3;
-  --tbl-head: #e6eef8;      /* світло-блакитна шапка */
-  --tbl-row: #ffffff;
-  --tbl-row-alt: #fbfcfe;   /* ледь помітна «зебра» */
-  --tbl-row-hover: #fff6d8; /* виділення при наведенні */
-  --tbl-row-emph: #fbf6e4;  /* м’яке жовтувате тло для «важливих» рядків */
-  --shadow: 0 1px 2px rgba(0,0,0,.06);
+html {
+    background: #e6e9e9;
+    background-image: linear-gradient(270deg, rgb(230, 233, 233) 0%, rgb(216, 221, 221) 100%);
+    -webkit-font-smoothing: antialiased;
+}
+/* ===== Фиксированный хедер ===== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: #f9fafb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
 }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  background: var(--page);   /* сіріший загальний фон */
-  color:var(--text);
-  font:16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial;
+/* внутренний контейнер */
+.header-inner {
+  max-width: 1200px;
+  width: 100%;
+  height: 72px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
-/* Контейнер */
-.container{width:min(1080px, 92vw); margin-inline:auto; padding-inline:16px}
-
-/* Хедер */
-.site-header{
-  position:sticky; top:0; z-index:10;
-  background: #ffffffcc;
-  backdrop-filter: saturate(180%) blur(6px);
-  border-bottom:1px solid #e5e7eb;
-}
-.header-inner{display:flex; align-items:center; justify-content:space-between; min-height:64px; gap:16px}
-.logo-block{display:flex; align-items:center; gap:12px}
-.logo{width:40px; height:40px; border-radius:6px; object-fit:cover; box-shadow:var(--shadow)}
-.site-title{margin:0; font-weight:800; font-size:20px}
-
-/* Перемикач мов */
-.lang-switcher{display:flex; gap:8px}
-.lang-switcher button{
-  appearance:none; border:1px solid #e5e7eb; background:#fff;
-  padding:8px 12px; border-radius:8px; font-weight:600; cursor:pointer;
-}
-.lang-switcher button:hover{background:#f3f6fb}
-
-/* Заголовки */
-h1,h2,h3{margin:0 0 .75em}
-body > h1{text-align:center; margin:24px 0 8px}
-h2{font-size:clamp(22px,2.2vw + 6px,28px); font-weight:750}
-h3{font-size:clamp(18px,1.6vw + 6px,22px); font-weight:700; margin-top:36px}
-
-/* Макет «про кооператив» + сайдбар */
-.main-content{padding-block:12px 56px}
-.about-and-links{display:grid; grid-template-columns:1fr 320px; gap:28px; margin:12px 0 24px}
-.side-box{
-  position:sticky; top:88px; background:var(--bg); border:1px solid var(--tbl-border);
-  border-radius:12px; padding:16px; box-shadow:var(--shadow)
-}
-.link-icons{display:flex; gap:12px; margin-bottom:12px}
-.link-icons a{display:inline-flex; width:44px; height:44px; border:1px solid var(--tbl-border); border-radius:10px; background:var(--bg-soft); align-items:center; justify-content:center}
-.link-icons img{max-width:28px; max-height:28px}
-.miy_dim-block{display:grid; place-items:center; gap:10px}
-.miy_dim_logo{width:100%; max-width:250px; border-radius:10px; border:1px solid var(--tbl-border); box-shadow:var(--shadow)}
-.cabinet-link{display:inline-flex; padding:10px 14px; border-radius:10px; background:#1f5fbf; color:#fff; text-decoration:none; font-weight:700}
-
-/* ===== Таблиці: як на референсі ===== */
-table{border-collapse:separate; border-spacing:0; width:100%}
-
-/* коробка таблиці */
-.fees-grouped{
-  margin-top:12px; margin-bottom:24px;
-  background:var(--bg);
-  border:1px solid var(--tbl-border);
-  border-radius:10px;             /* заокруглення */
-  overflow:hidden;
-  box-shadow: var(--shadow);      /* легка тінь */
+/* логотип и текст */
+.logo-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-/* шапка */
-.fees-grouped thead th{
-  background: var(--tbl-head);
-  color:#1e3a5f;
-  font-weight:700; text-align:left;
-  padding:12px 14px;
-  border-bottom:1px solid var(--tbl-border);
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  border: 1px solid #dce1e5;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+  display: block;
 }
 
-/* комірки */
-.fees-grouped tbody td{
-  padding:14px;                   /* більший вертикальний падінг */
-  vertical-align:top;
-  border-bottom:1px solid var(--tbl-border);
-  background: var(--tbl-row);
+.site-title {
+  margin: 0;
+  font-weight: 800;
+  font-size: 26px;
+  color: #253347;
+  line-height: 1;
+  white-space: nowrap;
 }
 
-/* зебра */
-.fees-grouped tbody tr:nth-child(even) td{
-  background: var(--tbl-row-alt);
+/* кнопки языка */
+.lang-switcher {
+  display: flex;
+  gap: 8px;
 }
 
-/* hover по рядку — виділення іншим кольором */
-.fees-grouped tbody tr:hover td{
-  background: var(--tbl-row-hover);
+.lang-switcher button {
+  background: #fff;
+  border: 1px solid #e2e6ea;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  cursor: pointer;
 }
 
-/* «емфатичний» (жовтуватий) фон для окремих рядків — задавай класом .emph на <tr> */
-.fees-grouped tbody tr.emph td{
-  background: var(--tbl-row-emph);
+.lang-switcher button:hover {
+  background: #f1f3f5;
 }
 
-/* останній рядок без нижнього бордера */
-.fees-grouped tbody tr:last-child td{border-bottom:0}
-
-/* колонка «Роки» зі слабким підсвічуванням і правим бордером */
-.yearcell{
-  white-space:nowrap; font-weight:700; color:#1e3a5f;
-  background:#f2f6fd;
-  border-right:1px solid var(--tbl-border);
-}
-.yearcell > div{padding:8px 12px}
-.yearcell .subnote{display:block; margin-top:4px; font-size:12px; color:var(--muted); font-weight:600}
-
-/* тарифні ширини (за потреби) */
-.tariffs-table thead th:nth-child(1){width:36%}
-.tariffs-table thead th:nth-child(2){width:64%}
-
-/* блок з e-mail */
-.email-box{
-  display:block; padding:14px 16px; margin-top:12px;
-  background:#f6f7fb; border:1px solid var(--tbl-border);
-  border-radius:10px;
+/* ===== Контент под хедером ===== */
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
-/* футер */
-.site-footer{border-top:1px solid #e5e7eb; background:var(--bg)}
-.footer-inner{display:flex; align-items:center; justify-content:space-between; min-height:72px}
-.copy{margin:0; color:var(--muted)}
-
-/* адаптив */
-@media (max-width:980px){
-  .about-and-links{grid-template-columns:1fr}
-  .side-box{position:static}
+/* контентная часть — всегда начинается после хедера */
+.page-content {
+  margin-top: 96px; /* высота хедера + немного воздуха */
+  padding: 0 16px;
+  box-sizing: border-box;
 }
-@media (max-width:560px){
-  .header-inner{min-height:56px}
-  .site-title{font-size:18px}
-  .fees-grouped thead th, .fees-grouped tbody td{padding:10px 12px}
-  .yearcell > div{padding:6px 10px}
+
+/* на маленьких экранах уменьшим отступ */
+@media (max-width: 640px) {
+  .page-content {
+    margin-top: 88px;
+  }
+}
+
+body {
+    background: #fff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+    color: #545454;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 85%;
+    padding: 2em 2em 4em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #222;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+h2 {
+    margin-top: 1.3em;
+}
+
+a {
+    color: #0083e8;
+}
+
+b, strong {
+    font-weight: 600;
+}
+
+samp {
+    display: none;
+}
+
+img {
+    animation: colorize 2s cubic-bezier(0, 0, .78, .36) 1;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 3px;
+    display: block;
+    margin: 0.5em auto;
+}
+
+@keyframes colorize {
+    0% {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+    100% {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+    }
+}
+
+
+
+td {
+    padding: 10px;
+}
+
+.bordered {
+    border: solid #ccc 1px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 1px #ccc; 
+    -moz-box-shadow: 0 1px 1px #ccc; 
+    box-shadow: 0 1px 1px #ccc;         
+}
+ 
+.bordered tr:hover {
+    background: #fbf8e9;
+    -o-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;     
+}    
+ 
+.bordered td, .bordered th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;    
+}
+ 
+.bordered th {
+    background-color: #dce9f9;
+   background-image: -webkit-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:    -moz-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:     -ms-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:      -o-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:         linear-gradient(top, #ebf3fc, #dce9f9);
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset; 
+    -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;  
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    border-top: none;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+}
+ 
+.bordered td:first-child, .bordered th:first-child {
+    border-left: none;
+}
+ 
+.bordered th:first-child {
+    -moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 0;
+}
+ 
+.bordered th:last-child {
+    -moz-border-radius: 0 6px 0 0;
+    -webkit-border-radius: 0 6px 0 0;
+    border-radius: 0 6px 0 0;
+}
+ 
+.bordered th:only-child{
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+}
+ 
+.bordered tr:last-child td:first-child {
+    -moz-border-radius: 0 0 0 6px;
+    -webkit-border-radius: 0 0 0 6px;
+    border-radius: 0 0 0 6px;
+}
+ 
+.bordered tr:last-child td:last-child {
+    -moz-border-radius: 0 0 6px 0;
+    -webkit-border-radius: 0 0 6px 0;
+    border-radius: 0 0 6px 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    body {
+        max-width: 100%;
+        padding: 1em;
+        font-size: 14px;
+    }
+
+    table {
+        width: 100% !important;
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 0.5em;
+        font-size: 13px;
+    }
+
+    .bordered td, .bordered th {
+        padding: 5px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+}table.bordered {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+}
+
+table.bordered th, table.bordered td {
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+}
+
+table.bordered thead th {
+  background: #e9f1fa;
+  font-weight: 600;
+  text-align: center;
+}
+
+
+
+table.bordered td[rowspan] {
+  background: #f4f8fb; /* легкий фон для ячейки с годом */
 }
