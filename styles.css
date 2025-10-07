@@ -79,9 +79,38 @@ td{padding:10px}
 /* =========================
    ОБЩИЕ ТАБЛИЦЫ
 ========================= */
-table.bordered{
-  width:100%;border-collapse:collapse;margin:1em 0;
-  font-family:Arial,sans-serif;font-size:15px;border:1px solid #ccc;border-radius:6px;box-shadow:0 1px 1px #ccc
+table.bordered {
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  position: relative;
+}
+/* Явно прорисовываем правую границу для всех ячеек */
+table.bordered td,
+table.bordered th {
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Последняя колонка без двойной границы */
+table.bordered td:last-child,
+table.bordered th:last-child {
+  border-right: none;
+}
+
+/* Если объединены строки — дорисовываем боковую границу */
+table.bordered td[rowspan] {
+  border-right: 1px solid #ccc !important;
+  border-left: 1px solid #ccc !important;
+}
+
+/* Для визуального выравнивания фона */
+table.bordered td[rowspan]:not(:first-child) {
+  background: #f8fafc;
+}
+
+/* Чуть мягче цвета линий для эстетики */
+table.bordered td, table.bordered th {
+  border-color: #d2d6da;
 }
 table.bordered thead th{
   background:#e9f1fa;font-weight:600;text-align:center;border-bottom:1px solid #ccc;padding:10px
@@ -154,8 +183,25 @@ table.bordered td[rowspan]{background:#f4f8fb}
   .page-content h1,
   .page-content h2,
   .page-content h3,
+  .page-content p {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Для элементов со span или div внутри (описания, абзацы и т.п.) */
+  .page-content span,
+  .page-content div {
+    padding-left: 16px;
+    padding-right: 16px;
+    display: block;
+  }
+
+  /* Добавляем немного воздуха между абзацами */
   .page-content p,
-  .page-content span{padding:0 14px}
+  .page-content span {
+    margin-bottom: 12px;
+  }
+
 
   /* Адаптив таблиц — не выходят за край body */
   table.bordered{
@@ -165,6 +211,37 @@ table.bordered td[rowspan]{background:#f4f8fb}
   table.bordered th, table.bordered td{
     white-space:normal; word-break:break-word; /* чтобы текст не распирал */
   }
+   table.bordered thead th:nth-child(1),
+  table.bordered tbody td:nth-child(1) { width: 18%; }
+
+  table.bordered thead th:nth-child(2),
+  table.bordered tbody td:nth-child(2) { width: 30%; }
+
+  table.bordered thead th:nth-child(3),
+  table.bordered tbody td:nth-child(3) { width: 18%; }
+
+  table.bordered thead th:nth-child(4),
+  table.bordered tbody td:nth-child(4) { width: 34%; }
+
+  /* Делает текст в "Сроки / Примечание" более читабельным */
+  table.bordered th:nth-child(4),
+  table.bordered td:nth-child(4) {
+    white-space: normal;        /* разрешаем нормальные переносы строк */
+    word-break: keep-all;       /* не рубим слова посередине */
+    overflow-wrap: anywhere;    /* но длинные токены можно переносить */
+    line-height: 1.38;
+    text-align: left;
+  }  [data-i18n^="about."] {
+    display: block;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 0 0 12px;           /* аккуратные абзацы */
+  }
+
+  /* Чтобы заголовки и прочий текст вокруг тоже имели поля по краям */
+  .page-content h1,
+  .page-content h2 { padding-left: 16px; padding-right: 16px; }
+
 }
 
 /* Очень маленькие экраны */
