@@ -13,14 +13,28 @@
 }
 
 *{box-sizing:border-box}
-html,body{margin:0;padding:0}
-
+html,body{margin:0;padding:0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;}
+main {
+  flex: 1 0 auto; /* основное содержимое растягивается */
+}
 html{
   background:var(--bg-grad-a);
   background-image:linear-gradient(270deg,var(--bg-grad-a) 0%,var(--bg-grad-b) 100%);
   -webkit-font-smoothing:antialiased;
 }
-
+footer {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 14px;
+  color: #666;
+  background: #f9f9f9;
+  border-top: 1px solid #e1e1e1;
+  margin-top: auto; /* прижимает футер вниз */
+}
 body{
   background:#fff;
   color:var(--text);
@@ -41,8 +55,13 @@ h3{font-size:clamp(18px,2.2vw,22px);margin:.8em 0 .4em}
 
 a{color:#0083e8;text-decoration:none}
 a:hover{text-decoration:underline}
-img{display:block;margin:.5em auto;border:1px solid rgba(0,0,0,.12);border-radius:3px;background:transparent;animation:colorize 2s cubic-bezier(0,0,.78,.36) 1}
+
+img{
+  display:block;margin:.5em auto;border:1px solid rgba(0,0,0,.12);border-radius:3px;background:transparent;
+  animation:colorize 2s cubic-bezier(0,0,.78,.36) 1;
+}
 @keyframes colorize{0%{filter:grayscale(100%)}100%{filter:grayscale(0%)}}
+
 td{padding:10px}
 
 /* =========================
@@ -54,7 +73,8 @@ td{padding:10px}
 }
 .header-inner{
   max-width:1200px;width:100%;height:var(--header-h);
-  margin:0 auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  margin:0 auto;padding:0 16px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
 }
 .logo-block{display:flex;align-items:center;gap:12px;min-width:0;flex-shrink:1}
 .logo{
@@ -63,190 +83,172 @@ td{padding:10px}
 }
 .site-title{
   margin:0;font-weight:800;font-size:clamp(18px,2.4vw,26px);color:var(--brand-dark);
-  line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+  line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
 }
 .lang-switcher{display:flex;gap:8px}
 .lang-switcher button{
   background:#fff;border:1px solid var(--btn-border);border-radius:8px;
   padding:clamp(6px,1vw,8px) clamp(10px,1.7vw,14px);
-  font-size:clamp(14px,1.2vw,15px);font-weight:600;color:#222;cursor:pointer;transition:.2s
+  font-size:clamp(14px,1.2vw,15px);font-weight:600;color:#222;cursor:pointer;transition:.2s;
 }
 .lang-switcher button:hover{background:#f1f3f5}
 .lang-switcher button.active{background:#253347;color:#fff;border-color:#253347}
 
+/* Контент всегда ниже шапки */
 .page-content{margin-top:calc(var(--header-h) + 10px);padding:0 16px}
 
 /* =========================
-   ОБЩИЕ ТАБЛИЦЫ
+   ОБЩИЙ СТИЛЬ ТАБЛИЦ
 ========================= */
-table.bordered {
-  border-collapse: collapse;
-  border: 1px solid #ccc;
-  position: relative;
-}
-/* Явно прорисовываем правую границу для всех ячеек */
-table.bordered td,
-table.bordered th {
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-}
-
-/* Последняя колонка без двойной границы */
-table.bordered td:last-child,
-table.bordered th:last-child {
-  border-right: none;
-}
-
-/* Если объединены строки — дорисовываем боковую границу */
-table.bordered td[rowspan] {
-  border-right: 1px solid #ccc !important;
-  border-left: 1px solid #ccc !important;
-}
-
-/* Для визуального выравнивания фона */
-table.bordered td[rowspan]:not(:first-child) {
-  background: #f8fafc;
-}
-
-/* Чуть мягче цвета линий для эстетики */
-table.bordered td, table.bordered th {
-  border-color: #d2d6da;
+table.bordered{
+  width:100%;
+  border-collapse:collapse;
+  border:1px solid #d2d6da;
+  border-radius:6px;
+  overflow:hidden;
+  box-shadow:0 1px 1px #ccc;
+  background:#fff;
 }
 table.bordered thead th{
-  background:#e9f1fa;font-weight:600;text-align:center;border-bottom:1px solid #ccc;padding:10px
+  background:#e9f1fa;
+  font-weight:600;
+  text-align:center;
+  padding:10px;
+  border:1px solid #d2d6da;
 }
 table.bordered td,table.bordered th{
-  border-top:1px solid #ccc;border-left:1px solid #ccc;padding:10px;text-align:left
+  border:1px solid #d2d6da;
+  padding:10px;
+  text-align:left;
+  vertical-align:top;
 }
-table.bordered td:first-child,table.bordered th:first-child{border-left:0}
 table.bordered tr:hover{background:#fbf8e9;transition:.1s ease-in-out}
 table.bordered td[rowspan]{background:#f4f8fb}
 
 /* =========================
-   КАРТОЧКА ССЫЛОК (если у таблицы есть класс .links-card
-   — используйте его, иначе можно оставить inline-стили как у вас)
+   ЛИНК-КАРТОЧКА (если есть .links-card)
 ========================= */
-.links-card{ /* desktop — как было */
-  border-radius:10px;
-}
+.links-card{border-radius:10px}
 
 /* =========================
    МОБИЛЬНАЯ АДАПТАЦИЯ
 ========================= */
+
+/* перенос, который виден только на мобильных */
+.br-sm{display:none}
 @media (max-width: 768px){
-  /* Убираем «серые поля» по бокам: делаем страницу во всю ширину */
+  /* Фон/контейнер */
   html{background:#fff}
   body{
-    max-width:100%; width:100%; margin:0; padding:0 0 28px;
-    box-shadow:none;
+    max-width:100%;width:100%;margin:0;padding:0 0 28px;box-shadow:none;
+    font-size:16.5px; /* базовый текст страницы */
   }
   .page-content{margin-top:calc(var(--header-h) + 8px);padding:0}
 
-  /* Шапка уже корректная — только немного уменьшим элементы */
-  .logo{width:48px;height:48px}
-  .site-title{font-size:22px}
-  .lang-switcher button{font-size:14px;padding:6px 12px}
+  /* Небольшие внутренние отступы для текстов/заголовков */
+@media (max-width: 768px) {
+  /* Отступы от краёв экрана */
+  .page-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 
-  /* Карточка ссылок — на всю ширину экрана + разделители */
-  .page-content > table[align="right"],
-  .links-card{
+  /* Заголовки и текст с одинаковыми боковыми полями */
+  .page-content h1,
+  .page-content h2,
+  .page-content h3,
+  .page-content p,
+  .page-content span {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Не добавляем padding ко всем div — только к текстовым */
+  .page-content div:not(:has(table)):not(.links-card):not(.table-container) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Таблицы с теми же отступами */
+  table.bordered {
+    width: calc(100% - 32px); /* 16px + 16px отступы */
+    margin: 12px 16px;
+    font-size: 11px;
+  }
+}
+
+  /* Карточка ссылок – аккуратно, с тенюшкой и отступами */
+  .page-content > table[align="right"], .links-card{
     display:block;width:100% !important;max-width:100%;
     margin:10px 0 14px;border-left:0 !important;border-right:0 !important;border-radius:14px !important;
     overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04)
   }
-  .page-content > table[align="right"] tbody,
-  .links-card tbody{display:block}
-  .page-content > table[align="right"] tr:first-child,
-  .links-card tr:first-child{display:flex;gap:0;border-bottom:1px solid #e6e6e6 !important}
-  .page-content > table[align="right"] tr:first-child td,
-  .links-card tr:first-child td{
+  .page-content > table[align="right"] tbody, .links-card tbody{display:block}
+  .page-content > table[align="right"] tr:first-child, .links-card tr:first-child{
+    display:flex;gap:0;border-bottom:1px solid #e6e6e6 !important
+  }
+  .page-content > table[align="right"] tr:first-child td, .links-card tr:first-child td{
     flex:1 1 33.33%;display:flex;align-items:center;justify-content:center;
     padding:12px 0;border:0 !important
   }
   .page-content > table[align="right"] tr:first-child td:not(:last-child),
   .links-card tr:first-child td:not(:last-child){
-    border-right:1px solid #e6e6e6 !important; /* вертикальные разделители */
+    border-right:1px solid #e6e6e6 !important;
   }
-  .page-content > table[align="right"] tr:first-child img,
-  .links-card tr:first-child img{width:56px !important;height:56px !important;margin:0;border:0}
-
-  .page-content > table[align="right"] tr:nth-child(2),
-  .links-card tr:nth-child(2){display:block;border-top:1px solid #e6e6e6 !important}
-  .page-content > table[align="right"] tr:nth-child(2) td,
-  .links-card tr:nth-child(2) td{display:block;padding:12px 16px;border:0 !important}
-  .page-content > table[align="right"] tr:nth-child(2) img,
-  .links-card tr:nth-child(2) img{height:72px !important;width:auto !important;margin:8px auto 6px;border:0}
-  .page-content > table[align="right"] tr:nth-child(2) div,
-  .links-card tr:nth-child(2) div{font-size:18px !important;text-align:center}
-
-  /* Гуттеры для остального контента (заголовки/таблицы и т.п.) */
-  .page-content h1,
-  .page-content h2,
-  .page-content h3,
-  .page-content p {
-    padding-left: 16px;
-    padding-right: 16px;
+  .page-content > table[align="right"] tr:first-child img, .links-card tr:first-child img{
+    width:56px !important;height:56px !important;margin:0;border:0
+  }
+  .page-content > table[align="right"] tr:nth-child(2), .links-card tr:nth-child(2){
+    display:block;border-top:1px solid #e6e6e6 !important
+  }
+  .page-content > table[align="right"] tr:nth-child(2) td, .links-card tr:nth-child(2) td{
+    display:block;padding:12px 16px;border:0 !important
+  }
+  .page-content > table[align="right"] tr:nth-child(2) img, .links-card tr:nth-child(2) img{
+    height:72px !important;width:auto !important;margin:8px auto 6px;border:0
+  }
+  .page-content > table[align="right"] tr:nth-child(2) div, .links-card tr:nth-child(2) div{
+    font-size:18px !important;text-align:center
   }
 
-  /* Для элементов со span или div внутри (описания, абзацы и т.п.) */
-  .page-content span,
-  .page-content div {
-    padding-left: 16px;
-    padding-right: 16px;
-    display: block;
+  /* ==== Таблицы: как на скрине — компактно, с полями, без ломки слов ==== */
+  .br-sm{display:inline} /* перенос \n только там, где он добавлен вручную */
+ table.bordered{
+    width: calc(100% - 40px);
+    margin: 10px 20px;
+    font-size: 10.8px;          /* ещё мельче, чтобы всё влезло */
+    border-radius: 6px;
+  }
+  table.bordered thead th,
+  table.bordered td{
+    padding: 4px 6px;
+    line-height: 1.16;
+    /* по умолчанию переносим только ПО ПРОБЕЛАМ, как на десктопе */
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: break-word;  /* длинные токены всё-таки сломаем, если нужно */
+    hyphens: manual;            /* не вставлять дефисы без <wbr>/<soft hyphen> */
   }
 
-  /* Добавляем немного воздуха между абзацами */
-  .page-content p,
-  .page-content span {
-    margin-bottom: 12px;
-  }
-
-
-  /* Адаптив таблиц — не выходят за край body */
-  table.bordered{
-    display:block; width:calc(100% - 28px); /* минус внутренние гуттеры */
-    margin:1em 14px; overflow-x:auto; -webkit-overflow-scrolling:touch;
-  }
-  table.bordered th, table.bordered td{
-    white-space:normal; word-break:break-word; /* чтобы текст не распирал */
-  }
-   table.bordered thead th:nth-child(1),
-  table.bordered tbody td:nth-child(1) { width: 18%; }
-
-  table.bordered thead th:nth-child(2),
-  table.bordered tbody td:nth-child(2) { width: 30%; }
-
-  table.bordered thead th:nth-child(3),
-  table.bordered tbody td:nth-child(3) { width: 18%; }
-
-  table.bordered thead th:nth-child(4),
-  table.bordered tbody td:nth-child(4) { width: 34%; }
-
-  /* Делает текст в "Сроки / Примечание" более читабельным */
-  table.bordered th:nth-child(4),
-  table.bordered td:nth-child(4) {
-    white-space: normal;        /* разрешаем нормальные переносы строк */
-    word-break: keep-all;       /* не рубим слова посередине */
-    overflow-wrap: anywhere;    /* но длинные токены можно переносить */
-    line-height: 1.38;
-    text-align: left;
-  }  [data-i18n^="about."] {
-    display: block;
-    padding-left: 16px;
-    padding-right: 16px;
-    margin: 0 0 12px;           /* аккуратные абзацы */
-  }
-
-  /* Чтобы заголовки и прочий текст вокруг тоже имели поля по краям */
-  .page-content h1,
-  .page-content h2 { padding-left: 16px; padding-right: 16px; }
+  /* Для 4-колоночной таблицы («Цільові внески») держим такие ширины,
+     чтобы фразы распределялись как на десктопе */
+  table.bordered.cols-4 thead tr th:nth-child(1),
+  table.bordered.cols-4 tbody tr td:nth-child(1){ width: 17%; } /* Роки */
+  table.bordered.cols-4 thead tr th:nth-child(2),
+  table.bordered.cols-4 tbody tr td:nth-child(2){ width: 41%; } /* Ціль */
+  table.bordered.cols-4 thead tr th:nth-child(3),
+  table.bordered.cols-4 tbody tr td:nth-child(3){ width: 14%; } /* Розмір */
+  table.bordered.cols-4 thead tr th:nth-child(4),
+  table.bordered.cols-4 tbody tr td:nth-child(4){ width: 28%; } /* Строки/Примітка */
 
 }
 
-/* Очень маленькие экраны */
-@media (max-width:480px){
-  .site-title{font-size:18px}
-  .page-content > table[align="right"] tr:first-child img,
-  .links-card tr:first-child img{width:48px !important;height:48px !important}
+@media (max-width: 480px){
+  table.bordered{
+    font-size: 10.5px;            /* для совсем маленьких экранов */
+  }
+  table.bordered thead th,
+  table.bordered td{
+    padding: 4px 5px;
+  }
 }
