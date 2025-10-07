@@ -136,66 +136,146 @@ table.bordered td:first-child, table.bordered th:first-child { border-left: 0; }
 table.bordered tr:hover { background: #fbf8e9; transition: .1s ease-in-out; }
 table.bordered td[rowspan] { background: #f4f8fb; }
 
-/* =========================
-   МОБИЛЬНАЯ ВЕРСИЯ
-   — блок ссылок сразу под шапкой,
-   — во всю ширину,
-   — крупный текст
-========================= */
-@media (max-width: 768px) {
-  :root { --header-h: 64px; }
-
-  body {
-    max-width: 100%;
-    padding: 1em 0 2.5em;
-    font-size: 16px; /* крупнее */
-  }
-  .page-content { margin-top: calc(var(--header-h) + 8px); padding: 0; }
-
-  /* Карточка ссылок — первая таблица с классом .links-card */
-  .links-card{
-    width: 100% !important;
-    max-width: 680px;
-    margin: 10px auto 14px;
-    float: none; /* игнорируем align="right" */
-    border-left: 0 !important;
-    border-right: 0 !important;
-    border-radius: 14px !important;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0 1px 2px rgba(0,0,0,.04);
-  }
-
-  /* Меняем табличную раскладку на блочную */
-  .links-card, .links-card tbody, .links-card tr, .links-card td { display: block; border: none !important; }
-
-  /* Верхняя полоса с 3 иконками — в строку */
-  .links-card tr:first-child { display: flex; gap: 12px; padding: 12px 10px; border-bottom: 1px solid #e6f4ea !important; }
-  .links-card tr:first-child td { flex: 1 1 33.33%; display: flex; align-items: center; justify-content: center; padding: 10px 0; }
-  .links-card tr:first-child td + td { border-left: 1px solid #e6f4ea !important; }
-  .links-card tr:first-child img { width: 56px !important; height: 56px !important; border: 0; margin: 0 auto; }
-
-  /* Низ карточки — подсказка + кнопка в ЛК */
-  .links-card tr:nth-child(2) { padding: 12px 16px 16px; }
-  .links-card tr:nth-child(2) .pay-hint,
-  .links-card tr:nth-child(2) div { text-align: center; font-size: 18px !important; }
-  .links-card tr:nth-child(2) img { height: 72px !important; width: auto !important; border: 0; margin: 6px auto 6px; }
-
-  /* Внутренние поля для основного контента */
-  .page-content h1,
-  .page-content h2,
-  .page-content h3,
-  .page-content p,
-  .page-content span { padding-left: 16px; padding-right: 16px; }
-
-  /* Длинные таблицы — горизонтальный скролл */
-  table.bordered { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+/* ======= ФИКСИРОВАННЫЙ ХЕДЕР ======= */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: #f9fafb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
 }
 
-/* Очень маленькие экраны */
-@media (max-width: 480px) {
-  :root { --header-h: 58px; }
-  .site-title { font-size: 18px; }
-  .links-card tr:first-child img { width: 48px !important; height: 48px !important; }
-  h1 { font-size: 22px; }
+/* Внутренний контейнер — лого/текст слева, языки справа */
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+/* Левый блок: лого + название подряд */
+.logo-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #dce1e5;
+  background: #fff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+}
+
+.site-title {
+  font-weight: 800;
+  font-size: 26px;
+  color: #253347;
+  line-height: 1;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Правый блок с кнопками */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-switcher button {
+  background: #fff;
+  border: 1px solid #e2e6ea;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-switcher button:hover {
+  background: #f1f3f5;
+}
+
+/* Активная кнопка языка */
+.lang-switcher button.active {
+  background: #253347;
+  color: #fff;
+  border-color: #253347;
+}
+
+/* ======= АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ ======= */
+@media (max-width: 640px) {
+  .site-header { height: auto; }
+  .header-inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  /* логотип и название остаются слева */
+  .logo { width: 48px; height: 48px; }
+  .site-title { font-size: 22px; }
+
+  /* языковые кнопки — справа, переносятся при необходимости */
+  .lang-switcher {
+    margin-left: auto;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .lang-switcher button {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+/* ====== БЛОК С ССЫЛКАМИ ПОД ШАПКОЙ (мобайл) ====== */
+/* используем ваш класс/таблицу .links-card; если его нет — повесьте class="links-card" */
+@media (max-width:768px){
+  .links-card{
+    display:block;width:100% !important;max-width:680px;margin:10px auto 14px;
+    float:none;border-left:0 !important;border-right:0 !important;border-radius:14px !important;
+    overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04)
+  }
+  /* превращаем верхнюю строку в ряд и добавляем разделители */
+  .links-card tbody{display:block}
+  .links-card tr:first-child{display:flex;gap:0;border-bottom:1px solid #e6e6e6 !important}
+  .links-card tr:first-child td{
+    flex:1 1 33.33%;display:flex;align-items:center;justify-content:center;
+    padding:12px 0;border:0 !important;position:relative
+  }
+  .links-card tr:first-child td:not(:last-child){
+    border-right:1px solid #e6e6e6 !important; /* вертикальные разделители между иконками */
+  }
+  .links-card tr:first-child img{width:56px !important;height:56px !important;margin:0;border:0}
+
+  /* низ карточки — одна ячейка; рисуем верхнюю линию и выравниваем контент */
+  .links-card tr:nth-child(2){display:block;border-top:1px solid #e6e6e6 !important}
+  .links-card tr:nth-child(2) td{display:block;padding:12px 16px;border:0 !important}
+  .links-card tr:nth-child(2) img{height:72px !important;width:auto !important;margin:8px auto 6px;border:0}
+  .links-card tr:nth-child(2) div{font-size:18px !important;text-align:center}
+}
+
+/* ещё компактнее — очень маленькие экраны */
+@media (max-width:480px){
+  .site-title{font-size:18px}
+  .links-card tr:first-child img{width:48px !important;height:48px !important}
 }
