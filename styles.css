@@ -1,300 +1,175 @@
 /* =========================
-   БАЗА И ПЕРЕМЕННЫЕ
+   ПЕРЕМЕННЫЕ И БАЗА
 ========================= */
-:root {
-  --bg-grad-a: #e6e9e9;
-  --bg-grad-b: #d8dddd;
-  --text: #545454;
-  --text-strong: #222;
-  --brand-dark: #253347;
-  --card-border: #dce1e5;
-  --btn-border: #e2e6ea;
-  --header-h: 72px;
+:root{
+  --bg-grad-a:#e6e9e9;
+  --bg-grad-b:#d8dddd;
+  --text:#545454;
+  --text-strong:#222;
+  --brand-dark:#253347;
+  --card-border:#dce1e5;
+  --btn-border:#e2e6ea;
+  --header-h:72px;
 }
 
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
 
-html {
-  background: var(--bg-grad-a);
-  background-image: linear-gradient(270deg, var(--bg-grad-a) 0%, var(--bg-grad-b) 100%);
-  -webkit-font-smoothing: antialiased;
+html{
+  background:var(--bg-grad-a);
+  background-image:linear-gradient(270deg,var(--bg-grad-a) 0%,var(--bg-grad-b) 100%);
+  -webkit-font-smoothing:antialiased;
 }
 
-/* ===== Основное тело ===== */
-body {
-  background: #fff;
-  color: var(--text);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: clamp(16px, 1.9vw, 18px);
-  line-height: 1.5;
-  margin: 0 auto;
-
-  /* шире на всех устройствах */
-  max-width: 95%;
-  padding: 1.5em 1.5em 3em;
-
-  box-shadow: 0 0 2px rgba(0,0,0,.06);
-  border-radius: 6px;
-}
-
-/* На планшетах и мобильных — почти во всю ширину */
-@media (max-width: 1024px) {
-  body {
-    max-width: 98%;
-    padding: 1.2em 1.2em 2.5em;
-  }
-}
-
-@media (max-width: 640px) {
-  body {
-    max-width: 100%;
-    padding: 1em 0.8em 2em;
-    box-shadow: none; /* убираем рамку по краям, чтобы заняло весь экран */
-    border-radius: 0;
-  }
+body{
+  background:#fff;
+  color:var(--text);
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size:clamp(16px,1.9vw,18px);
+  line-height:1.5;
+  margin:0 auto;
+  max-width:85%;
+  padding:2em 2em 3em;
+  box-shadow:0 0 2px rgba(0,0,0,.06);
 }
 
 /* Типографика */
-h1, h2, h3 { color: var(--text-strong); font-weight: 600; line-height: 1.3; }
-h1 { font-size: clamp(24px, 3.2vw, 36px); margin: .6em 0 .3em; }
-h2 { font-size: clamp(20px, 2.6vw, 28px); margin: 1em 0 .5em; }
-h3 { font-size: clamp(18px, 2.2vw, 22px); margin: .8em 0 .4em; }
+h1,h2,h3{color:var(--text-strong);font-weight:600;line-height:1.3}
+h1{font-size:clamp(24px,3.2vw,36px);margin:.6em 0 .3em}
+h2{font-size:clamp(20px,2.6vw,28px);margin:1em 0 .5em}
+h3{font-size:clamp(18px,2.2vw,22px);margin:.8em 0 .4em}
 
-a { color: #0083e8; text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-img {
-  display: block;
-  margin: .5em auto;
-  border: 1px solid rgba(0,0,0,.12);
-  border-radius: 3px;
-  background: transparent;
-  animation: colorize 2s cubic-bezier(0,0,.78,.36) 1;
-}
-@keyframes colorize { 0% { filter: grayscale(100%); } 100% { filter: grayscale(0%); } }
-
-td { padding: 10px; }
+a{color:#0083e8;text-decoration:none}
+a:hover{text-decoration:underline}
+img{display:block;margin:.5em auto;border:1px solid rgba(0,0,0,.12);border-radius:3px;background:transparent;animation:colorize 2s cubic-bezier(0,0,.78,.36) 1}
+@keyframes colorize{0%{filter:grayscale(100%)}100%{filter:grayscale(0%)}}
+td{padding:10px}
 
 /* =========================
    ФИКСИРОВАННАЯ ШАПКА
 ========================= */
-.site-header {
-  position: fixed; top: 0; left: 0; right: 0;
-  height: var(--header-h);
-  background: #f9fafb;
-  box-shadow: 0 1px 3px rgba(0,0,0,.08);
-  z-index: 1000;
+.site-header{
+  position:fixed;top:0;left:0;right:0;height:var(--header-h);
+  background:#f9fafb;box-shadow:0 1px 3px rgba(0,0,0,.08);z-index:1000;
 }
-.header-inner {
-  max-width: 1200px; width: 100%; height: var(--header-h);
-  margin: 0 auto; padding: 0 16px;
-  display: flex; align-items: center; justify-content: space-between;
+.header-inner{
+  max-width:1200px;width:100%;height:var(--header-h);
+  margin:0 auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:16px;
 }
-.logo-block { display: flex; align-items: center; gap: 12px; }
+.logo-block{display:flex;align-items:center;gap:12px;min-width:0;flex-shrink:1}
+.logo{
+  width:clamp(44px,4.6vw,56px);height:clamp(44px,4.6vw,56px);
+  border-radius:50%;object-fit:cover;background:#fff;border:1px solid var(--card-border);box-shadow:0 0 2px rgba(0,0,0,.06);
+}
+.site-title{
+  margin:0;font-weight:800;font-size:clamp(18px,2.4vw,26px);color:var(--brand-dark);
+  line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+}
+.lang-switcher{display:flex;gap:8px}
+.lang-switcher button{
+  background:#fff;border:1px solid var(--btn-border);border-radius:8px;
+  padding:clamp(6px,1vw,8px) clamp(10px,1.7vw,14px);
+  font-size:clamp(14px,1.2vw,15px);font-weight:600;color:#222;cursor:pointer;transition:.2s
+}
+.lang-switcher button:hover{background:#f1f3f5}
+.lang-switcher button.active{background:#253347;color:#fff;border-color:#253347}
 
-.logo {
-  width: clamp(44px, 4.6vw, 56px);
-  height: clamp(44px, 4.6vw, 56px);
-  border-radius: 50%;
-  object-fit: cover;
-  background: #fff;
-  border: 1px solid var(--card-border);
-  box-shadow: 0 0 2px rgba(0,0,0,.06);
-}
+.page-content{margin-top:calc(var(--header-h) + 10px);padding:0 16px}
 
-.site-title {
-  margin: 0;
-  font-weight: 800;
-  font-size: clamp(18px, 2.4vw, 26px);
-  color: var(--brand-dark);
-  line-height: 1;
-  white-space: nowrap;
+/* =========================
+   ОБЩИЕ ТАБЛИЦЫ
+========================= */
+table.bordered{
+  width:100%;border-collapse:collapse;margin:1em 0;
+  font-family:Arial,sans-serif;font-size:15px;border:1px solid #ccc;border-radius:6px;box-shadow:0 1px 1px #ccc
 }
+table.bordered thead th{
+  background:#e9f1fa;font-weight:600;text-align:center;border-bottom:1px solid #ccc;padding:10px
+}
+table.bordered td,table.bordered th{
+  border-top:1px solid #ccc;border-left:1px solid #ccc;padding:10px;text-align:left
+}
+table.bordered td:first-child,table.bordered th:first-child{border-left:0}
+table.bordered tr:hover{background:#fbf8e9;transition:.1s ease-in-out}
+table.bordered td[rowspan]{background:#f4f8fb}
 
-.lang-switcher { display: flex; gap: 8px; }
-.lang-switcher button {
-  background: #fff;
-  border: 1px solid var(--btn-border);
-  border-radius: 8px;
-  padding: clamp(6px, 1vw, 8px) clamp(10px, 1.7vw, 14px);
-  font-size: clamp(14px, 1.2vw, 15px);
-  font-weight: 600;
-  color: #222;
-  cursor: pointer;
-}
-.lang-switcher button:hover { background: #f1f3f5; }
-
-/* Контент начинается ниже шапки */
-.page-content { margin-top: calc(var(--header-h) + 10px); padding: 0 16px; }
-
-/* ====== Таблицы ====== */
-table.bordered {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1em 0;
-  font-family: Arial, sans-serif;
-  font-size: 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-shadow: 0 1px 1px #ccc;
-}
-table.bordered thead th {
-  background: #e9f1fa;
-  font-weight: 600;
-  text-align: center;
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
-}
-table.bordered td, table.bordered th {
-  border-top: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-  padding: 10px;
-  text-align: left;
-}
-table.bordered td:first-child, table.bordered th:first-child { border-left: 0; }
-table.bordered tr:hover { background: #fbf8e9; transition: .1s ease-in-out; }
-table.bordered td[rowspan] { background: #f4f8fb; }
-/* ======= ФИКСИРОВАННЫЙ ХЕДЕР ======= */
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 72px;
-  background: #f9fafb;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  z-index: 1000;
+/* =========================
+   КАРТОЧКА ССЫЛОК (если у таблицы есть класс .links-card
+   — используйте его, иначе можно оставить inline-стили как у вас)
+========================= */
+.links-card{ /* desktop — как было */
+  border-radius:10px;
 }
 
-/* Внутренний контейнер — лого/текст слева, языки справа */
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
-  gap: 16px;
-  box-sizing: border-box;
-}
-
-/* Левый блок: лого + название подряд */
-.logo-block {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 1;
-  min-width: 0;
-}
-
-.logo {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid #dce1e5;
-  background: #fff;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
-}
-
-.site-title {
-  font-weight: 800;
-  font-size: 26px;
-  color: #253347;
-  line-height: 1;
-  margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Правый блок с кнопками */
-.lang-switcher {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.lang-switcher button {
-  background: #fff;
-  border: 1px solid #e2e6ea;
-  border-radius: 8px;
-  padding: 8px 14px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #222;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.lang-switcher button:hover {
-  background: #f1f3f5;
-}
-
-/* Активная кнопка языка */
-.lang-switcher button.active {
-  background: #253347;
-  color: #fff;
-  border-color: #253347;
-}
-
-/* ======= АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ ======= */
-@media (max-width: 640px) {
-  .site-header { height: auto; }
-  .header-inner {
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 8px 12px;
-    gap: 8px;
+/* =========================
+   МОБИЛЬНАЯ АДАПТАЦИЯ
+========================= */
+@media (max-width: 768px){
+  /* Убираем «серые поля» по бокам: делаем страницу во всю ширину */
+  html{background:#fff}
+  body{
+    max-width:100%; width:100%; margin:0; padding:0 0 28px;
+    box-shadow:none;
   }
+  .page-content{margin-top:calc(var(--header-h) + 8px);padding:0}
 
-  /* логотип и название остаются слева */
-  .logo { width: 48px; height: 48px; }
-  .site-title { font-size: 22px; }
+  /* Шапка уже корректная — только немного уменьшим элементы */
+  .logo{width:48px;height:48px}
+  .site-title{font-size:22px}
+  .lang-switcher button{font-size:14px;padding:6px 12px}
 
-  /* языковые кнопки — справа, переносятся при необходимости */
-  .lang-switcher {
-    margin-left: auto;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-  .lang-switcher button {
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-}
-
-/* ====== БЛОК С ССЫЛКАМИ ПОД ШАПКОЙ (мобайл) ====== */
-/* используем ваш класс/таблицу .links-card; если его нет — повесьте class="links-card" */
-@media (max-width:768px){
+  /* Карточка ссылок — на всю ширину экрана + разделители */
+  .page-content > table[align="right"],
   .links-card{
-    display:block;width:100% !important;max-width:680px;margin:10px auto 14px;
-    float:none;border-left:0 !important;border-right:0 !important;border-radius:14px !important;
+    display:block;width:100% !important;max-width:100%;
+    margin:10px 0 14px;border-left:0 !important;border-right:0 !important;border-radius:14px !important;
     overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04)
   }
-  /* превращаем верхнюю строку в ряд и добавляем разделители */
+  .page-content > table[align="right"] tbody,
   .links-card tbody{display:block}
+  .page-content > table[align="right"] tr:first-child,
   .links-card tr:first-child{display:flex;gap:0;border-bottom:1px solid #e6e6e6 !important}
+  .page-content > table[align="right"] tr:first-child td,
   .links-card tr:first-child td{
     flex:1 1 33.33%;display:flex;align-items:center;justify-content:center;
-    padding:12px 0;border:0 !important;position:relative
+    padding:12px 0;border:0 !important
   }
+  .page-content > table[align="right"] tr:first-child td:not(:last-child),
   .links-card tr:first-child td:not(:last-child){
-    border-right:1px solid #e6e6e6 !important; /* вертикальные разделители между иконками */
+    border-right:1px solid #e6e6e6 !important; /* вертикальные разделители */
   }
+  .page-content > table[align="right"] tr:first-child img,
   .links-card tr:first-child img{width:56px !important;height:56px !important;margin:0;border:0}
 
-  /* низ карточки — одна ячейка; рисуем верхнюю линию и выравниваем контент */
+  .page-content > table[align="right"] tr:nth-child(2),
   .links-card tr:nth-child(2){display:block;border-top:1px solid #e6e6e6 !important}
+  .page-content > table[align="right"] tr:nth-child(2) td,
   .links-card tr:nth-child(2) td{display:block;padding:12px 16px;border:0 !important}
+  .page-content > table[align="right"] tr:nth-child(2) img,
   .links-card tr:nth-child(2) img{height:72px !important;width:auto !important;margin:8px auto 6px;border:0}
+  .page-content > table[align="right"] tr:nth-child(2) div,
   .links-card tr:nth-child(2) div{font-size:18px !important;text-align:center}
+
+  /* Гуттеры для остального контента (заголовки/таблицы и т.п.) */
+  .page-content h1,
+  .page-content h2,
+  .page-content h3,
+  .page-content p,
+  .page-content span{padding:0 14px}
+
+  /* Адаптив таблиц — не выходят за край body */
+  table.bordered{
+    display:block; width:calc(100% - 28px); /* минус внутренние гуттеры */
+    margin:1em 14px; overflow-x:auto; -webkit-overflow-scrolling:touch;
+  }
+  table.bordered th, table.bordered td{
+    white-space:normal; word-break:break-word; /* чтобы текст не распирал */
+  }
 }
 
-/* ещё компактнее — очень маленькие экраны */
+/* Очень маленькие экраны */
 @media (max-width:480px){
   .site-title{font-size:18px}
+  .page-content > table[align="right"] tr:first-child img,
   .links-card tr:first-child img{width:48px !important;height:48px !important}
 }
