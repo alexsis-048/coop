@@ -33,7 +33,7 @@ footer {
   color: #666;
   background: #f9f9f9;
   border-top: 1px solid #e1e1e1;
-  margin-top: auto; /* прижимает футер вниз */
+  margin-top:auto;
 }
 body{
   background:#fff;
@@ -42,7 +42,8 @@ body{
   font-size:clamp(16px,1.9vw,18px);
   line-height:1.5;
   margin:0 auto;
-  max-width:85%;
+  min-height: max-content;    
+  max-width:90%;
   padding:2em 2em 3em;
   box-shadow:0 0 2px rgba(0,0,0,.06);
 }
@@ -133,6 +134,7 @@ table.bordered td[rowspan]{background:#f4f8fb}
 /* =========================
    МОБИЛЬНАЯ АДАПТАЦИЯ
 ========================= */
+
 
 /* перенос, который виден только на мобильных */
 .br-sm{display:none}
