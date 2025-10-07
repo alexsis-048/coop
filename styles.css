@@ -172,11 +172,7 @@ table.bordered td[rowspan]{background:#f4f8fb}
   }
 
   /* Таблицы с теми же отступами */
-  table.bordered {
-    width: calc(100% - 32px); /* 16px + 16px отступы */
-    margin: 12px 16px;
-    font-size: 11px;
-  }
+ 
 }
 
   /* Карточка ссылок – аккуратно, с тенюшкой и отступами */
@@ -215,12 +211,13 @@ table.bordered td[rowspan]{background:#f4f8fb}
 
   /* ==== Таблицы: как на скрине — компактно, с полями, без ломки слов ==== */
   .br-sm{display:inline} /* перенос \n только там, где он добавлен вручную */
- table.bordered{
-    width: calc(100% - 40px);
-    margin: 10px 20px;
-    font-size: 10.8px;          /* ещё мельче, чтобы всё влезло */
-    border-radius: 6px;
-  }
+/* Мобильные: меньше поля слева/справа */
+table.bordered{
+  width: calc(100% - 1px); /* 8px + 8px */
+  margin: 5px 5px;
+  border-radius: 6px;
+}
+
   table.bordered thead th,
   table.bordered td{
     padding: 4px 6px;
