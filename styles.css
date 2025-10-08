@@ -1,6 +1,3 @@
-/* =========================
-   ПЕРЕМЕННЫЕ И БАЗА
-========================= */
 :root{
   --bg-grad-a:#e6e9e9;
   --bg-grad-b:#d8dddd;
@@ -18,7 +15,7 @@ html,body{margin:0;padding:0;
   display: flex;
   flex-direction: column;}
 main {
-  flex: 1 0 auto; /* основное содержимое растягивается */
+  flex: 1 0 auto;
 }
 html{
   background:var(--bg-grad-a);
@@ -48,7 +45,6 @@ body{
   box-shadow:0 0 2px rgba(0,0,0,.06);
 }
 
-/* Типографика */
 h1,h2,h3{color:var(--text-strong);font-weight:600;line-height:1.3}
 h1{font-size:clamp(24px,3.2vw,36px);margin:.6em 0 .3em}
 h2{font-size:clamp(20px,2.6vw,28px);margin:1em 0 .5em}
@@ -65,9 +61,6 @@ img{
 
 td{padding:10px}
 
-/* =========================
-   ФИКСИРОВАННАЯ ШАПКА
-========================= */
 .site-header{
   position:fixed;top:0;left:0;right:0;height:var(--header-h);
   background:#f9fafb;box-shadow:0 1px 3px rgba(0,0,0,.08);z-index:1000;
@@ -95,12 +88,8 @@ td{padding:10px}
 .lang-switcher button:hover{background:#f1f3f5}
 .lang-switcher button.active{background:#253347;color:#fff;border-color:#253347}
 
-/* Контент всегда ниже шапки */
 .page-content{margin-top:calc(var(--header-h) + 10px);padding:0 16px}
 
-/* =========================
-   ОБЩИЙ СТИЛЬ ТАБЛИЦ
-========================= */
 table.bordered{
   width:100%;
   border-collapse:collapse;
@@ -126,36 +115,23 @@ table.bordered td,table.bordered th{
 table.bordered tr:hover{background:#fbf8e9;transition:.1s ease-in-out}
 table.bordered td[rowspan]{background:#f4f8fb}
 
-/* =========================
-   ЛИНК-КАРТОЧКА (если есть .links-card)
-========================= */
 .links-card{border-radius:10px}
 
-/* =========================
-   МОБИЛЬНАЯ АДАПТАЦИЯ
-========================= */
-
-
-/* перенос, который виден только на мобильных */
 .br-sm{display:none}
 @media (max-width: 768px){
-  /* Фон/контейнер */
   html{background:#fff}
   body{
     max-width:100%;width:100%;margin:0;padding:0 0 28px;box-shadow:none;
-    font-size:16.5px; /* базовый текст страницы */
+    font-size:16.5px;
   }
   .page-content{margin-top:calc(var(--header-h) + 8px);padding:0}
 
-  /* Небольшие внутренние отступы для текстов/заголовков */
 @media (max-width: 768px) {
-  /* Отступы от краёв экрана */
   .page-content {
     padding-left: 16px;
     padding-right: 16px;
   }
 
-  /* Заголовки и текст с одинаковыми боковыми полями */
   .page-content h1,
   .page-content h2,
   .page-content h3,
@@ -165,17 +141,13 @@ table.bordered td[rowspan]{background:#f4f8fb}
     margin-right: 0;
   }
 
-  /* Не добавляем padding ко всем div — только к текстовым */
   .page-content div:not(:has(table)):not(.links-card):not(.table-container) {
     margin-left: 0;
     margin-right: 0;
   }
-
-  /* Таблицы с теми же отступами */
  
 }
 
-  /* Карточка ссылок – аккуратно, с тенюшкой и отступами */
   .page-content > table[align="right"], .links-card{
     display:block;width:100% !important;max-width:100%;
     margin:10px 0 14px;border-left:0 !important;border-right:0 !important;border-radius:14px !important;
@@ -209,11 +181,9 @@ table.bordered td[rowspan]{background:#f4f8fb}
     font-size:18px !important;text-align:center
   }
 
-  /* ==== Таблицы: как на скрине — компактно, с полями, без ломки слов ==== */
-  .br-sm{display:inline} /* перенос \n только там, где он добавлен вручную */
-/* Мобильные: меньше поля слева/справа */
+  .br-sm{display:inline}
 table.bordered{
-  width: calc(100% - 1px); /* 8px + 8px */
+  width: calc(100% - 1px);
   margin: 5px 5px;
   border-radius: 6px;
 }
@@ -222,29 +192,26 @@ table.bordered{
   table.bordered td{
     padding: 4px 6px;
     line-height: 1.16;
-    /* по умолчанию переносим только ПО ПРОБЕЛАМ, как на десктопе */
     white-space: normal;
     word-break: normal;
-    overflow-wrap: break-word;  /* длинные токены всё-таки сломаем, если нужно */
-    hyphens: manual;            /* не вставлять дефисы без <wbr>/<soft hyphen> */
+    overflow-wrap: break-word;
+    hyphens: manual;
   }
 
-  /* Для 4-колоночной таблицы («Цільові внески») держим такие ширины,
-     чтобы фразы распределялись как на десктопе */
   table.bordered.cols-4 thead tr th:nth-child(1),
-  table.bordered.cols-4 tbody tr td:nth-child(1){ width: 17%; } /* Роки */
+  table.bordered.cols-4 tbody tr td:nth-child(1){ width: 17%; }
   table.bordered.cols-4 thead tr th:nth-child(2),
-  table.bordered.cols-4 tbody tr td:nth-child(2){ width: 41%; } /* Ціль */
+  table.bordered.cols-4 tbody tr td:nth-child(2){ width: 41%; }
   table.bordered.cols-4 thead tr th:nth-child(3),
-  table.bordered.cols-4 tbody tr td:nth-child(3){ width: 14%; } /* Розмір */
+  table.bordered.cols-4 tbody tr td:nth-child(3){ width: 14%; }
   table.bordered.cols-4 thead tr th:nth-child(4),
-  table.bordered.cols-4 tbody tr td:nth-child(4){ width: 28%; } /* Строки/Примітка */
+  table.bordered.cols-4 tbody tr td:nth-child(4){ width: 28%; }
 
 }
 
 @media (max-width: 480px){
   table.bordered{
-    font-size: 10.5px;            /* для совсем маленьких экранов */
+    font-size: 10.5px;
   }
   table.bordered thead th,
   table.bordered td{
