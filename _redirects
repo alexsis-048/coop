@@ -1,0 +1,8 @@
+# Перенаправление всех с http на https
+http://harchovik-2.xyz/*      https://harchovik-2.xyz/:splat 301!
+
+# Перенаправление всех с www на без www
+https://www.harchovik-2.xyz/* https://harchovik-2.xyz/:splat 301!
+
+# Если кто-то случайно заходит по http + www
+http://www.harchovik-2.xyz/*  https://harchovik-2.xyz/:splat 301!
